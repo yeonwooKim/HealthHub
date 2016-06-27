@@ -62,7 +62,7 @@ zran.c
 #include <string.h> // memcpy
 #include <stdio.h> // EOF
 
-#include <gdcm_zlib.h>
+#include "../../Utilities/gdcm_zlib.h"
 
 #ifdef WIN32 /* Window 95 & Windows NT */
 #  define OS_CODE  0x0b

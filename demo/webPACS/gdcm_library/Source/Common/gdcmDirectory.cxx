@@ -50,7 +50,7 @@ unsigned int Directory::Explore(FilenameType const &name, bool recursive)
   std::string dirName = name;
   //assert( System::FileIsDirectory( dirName ) );
   Directories.push_back( dirName );
-#ifdef _MSC_VER
+/*#ifdef _MSC_VER
   WIN32_FIND_DATA fileData;
   dirName.append("/");
   assert( dirName[dirName.size()-1] == '/' );
@@ -85,7 +85,7 @@ unsigned int Directory::Explore(FilenameType const &name, bool recursive)
     return 0;
     }
 
-#else
+#else*/
   // Real POSIX implementation: scandir is a BSD extension only, and doesn't
   // work on debian for example
 
@@ -147,7 +147,8 @@ unsigned int Directory::Explore(FilenameType const &name, bool recursive)
     const char *str = strerror(errno); (void)str;
     gdcmErrorMacro( "Last error was: " << str << " when closing directory: " << fileName );
     }
-#endif
+//#endif
+	//TODO: Implement file IO using pepper API
 
   return nFiles;
 }

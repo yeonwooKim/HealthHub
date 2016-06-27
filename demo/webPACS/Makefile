@@ -24,8 +24,6 @@ SOURCES = \
 					gdcm_library/Source/Common/gdcmBase64.cxx	\
 					gdcm_library/Source/Common/gdcmBoxRegion.cxx	\
 					gdcm_library/Source/Common/gdcmByteSwap.cxx	\
-					gdcm_library/Source/Common/gdcmCAPICryptoFactory.cxx	\
-					gdcm_library/Source/Common/gdcmCAPICryptographicMessageSyntax.cxx	\
 					gdcm_library/Source/Common/gdcmCommand.cxx	\
           gdcm_library/Source/Common/gdcmCryptoFactory.cxx	\
           gdcm_library/Source/Common/gdcmCryptographicMessageSyntax.cxx	\
@@ -51,7 +49,6 @@ SOURCES = \
           gdcm_library/Source/Common/gdcmSubject.cxx	\
           gdcm_library/Source/Common/gdcmSwapCode.cxx	\
           gdcm_library/Source/Common/gdcmSystem.cxx	\
-          gdcm_library/Source/Common/gdcmTerminal.cxx	\
           gdcm_library/Source/Common/gdcmTesting.cxx	\
           gdcm_library/Source/Common/gdcmTrace.cxx	\
           gdcm_library/Source/Common/gdcmUnpacker12Bits.cxx	\

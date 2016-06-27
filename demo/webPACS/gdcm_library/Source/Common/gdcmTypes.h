@@ -14,7 +14,7 @@
 #ifndef GDCMTYPES_H
 #define GDCMTYPES_H
 
-#include "gdcmConfigure.h"
+//#include "gdcmConfigure.h"
 #include "gdcmWin32.h"
 #include "gdcmLegacyMacro.h"
 
@@ -42,8 +42,8 @@ typedef  unsigned int        uint32_t;
 typedef  unsigned __int64    uint64_t;
 #elif defined(_MSC_VER)
 #include "stdint.h"
-#else
-#error "Sorry, your platform is not supported"
+//#else
+//#error "Sorry, your platform is not supported"
 #endif // defined(_MSC_VER) || defined(__BORLANDC__) && (__BORLANDC__ < 0x0560)  || defined(__MINGW32__)
 #endif // GDCM_HAVE_INTTYPES_H
 #endif // GDCM_HAVE_STDINT_H

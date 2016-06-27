@@ -96,7 +96,7 @@ const char *Filename::ToUnixSlashes()
   return Conversion.c_str();
 }
 
-#if defined(_WIN32) && (defined(_MSC_VER) || defined(__WATCOMC__) || defined(__BORLANDC__) || defined(__MINGW32__))
+/*#if defined(_WIN32) && (defined(_MSC_VER) || defined(__WATCOMC__) || defined(__BORLANDC__) || defined(__MINGW32__))
 #include <windows.h>
 
 inline void Realpath(const char *path, std::string & resolved_path)
@@ -113,7 +113,7 @@ inline void Realpath(const char *path, std::string & resolved_path)
     resolved_path = "";
     }
 }
-#else
+#else*/
 /* The maximum length of a file name.  */
 #if defined(PATH_MAX)
 # define GDCM_FILENAME_MAXPATH PATH_MAX
@@ -137,7 +137,7 @@ inline void Realpath(const char *path, std::string & resolved_path)
     resolved_path = "";
     }
 }
-#endif
+//#endif
 
 const char *Filename::GetExtension()
 {
