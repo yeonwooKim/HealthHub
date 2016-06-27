@@ -1,0 +1,461 @@
+
+As-needed library included to satisfy reference by file (symbol)
+
+libc.so.0.1                   glibc/Release/reverse_arm_pic.o (strlen@@GLIBC_2.22)
+
+Discarded input sections
+
+ .group         0x0000000000000000        0x8 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/crti.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/crti.o
+ .group         0x0000000000000000        0x8 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/crtbeginS.o
+ .note.NaCl.ABI.arm
+                0x0000000000000000       0x18 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/crtbeginS.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/crtbeginS.o
+ .group         0x0000000000000000        0x8 glibc/Release/reverse_arm_pic.o
+ .note.NaCl.ABI.arm
+                0x0000000000000000       0x18 glibc/Release/reverse_arm_pic.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 glibc/Release/reverse_arm_pic.o
+ .group         0x0000000000000000        0x8 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/crtendS.o
+ .note.NaCl.ABI.arm
+                0x0000000000000000       0x18 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/crtendS.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/crtendS.o
+ .group         0x0000000000000000        0x8 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/crtn.o
+ .note.NaCl.ABI.arm
+                0x0000000000000000       0x18 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/crtn.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/crtn.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/crti.o
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/crtbeginS.o
+LOAD glibc/Release/reverse_arm_pic.o
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/libstdc++.so
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/libm.so
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/libgcc_s.so
+START GROUP
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/libgcc_s.so.1
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/libgcc.a
+END GROUP
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/libpthread.so
+START GROUP
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../arm-nacl/lib/libpthread.so.0
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../arm-nacl/lib/libpthread_nonshared.a
+END GROUP
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/libc.so
+START GROUP
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../arm-nacl/lib/libc.so.0.1
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../arm-nacl/lib/libc_nonshared.a
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../arm-nacl/lib/ld-nacl-arm.so.1
+END GROUP
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/libgcc_s.so
+START GROUP
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/libgcc_s.so.1
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/libgcc.a
+END GROUP
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/crtendS.o
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/crtn.o
+                0x0000000000000000                . = 0x0
+
+.init
+ *(SORT(.init))
+
+.plt            0x0000000000000000       0x70
+ *(.plt)
+ .plt           0x0000000000000000       0x70 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/crti.o
+
+.iplt           0x0000000000000070        0x0
+ *(.iplt)
+ .iplt          0x0000000000000070        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/crti.o
+
+.text           0x0000000000000070      0x300
+ *(.text.unlikely .text.*_unlikely .text.unlikely.*)
+ *(.text.exit .text.exit.*)
+ *(.text.startup .text.startup.*)
+ *(.text.hot .text.hot.*)
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0x0000000000000070        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/crti.o
+ .text          0x0000000000000070      0x270 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/crtbeginS.o
+ .text          0x00000000000002e0       0x90 glibc/Release/reverse_arm_pic.o
+                0x00000000000002e0                Reverse
+ .text          0x0000000000000370        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/crtendS.o
+ .text          0x0000000000000370        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/crtn.o
+ *(.gnu.warning)
+ *(.glue_7t)
+ .glue_7t       0x0000000000000370        0x0 linker stubs
+ *(.glue_7)
+ .glue_7        0x0000000000000370        0x0 linker stubs
+ *(.vfp11_veneer)
+ .vfp11_veneer  0x0000000000000370        0x0 linker stubs
+ *(.v4_bx)
+ .v4_bx         0x0000000000000370        0x0 linker stubs
+
+.fini
+ *(SORT(.fini))
+                [!provide]                        PROVIDE (__etext, .)
+                [!provide]                        PROVIDE (_etext, .)
+                [!provide]                        PROVIDE (etext, .)
+                0x0000000010000134                . = (0x10000000 + SIZEOF_HEADERS)
+
+.note.gnu.build-id
+                0x0000000010000134       0x24
+ *(.note.gnu.build-id)
+ .note.gnu.build-id
+                0x0000000010000134       0x24 linker stubs
+
+.hash
+ *(.hash)
+
+.gnu.hash       0x0000000010000158       0x44
+ *(.gnu.hash)
+ .gnu.hash      0x0000000010000158       0x44 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/crti.o
+
+.dynsym         0x000000001000019c      0x110
+ *(.dynsym)
+ .dynsym        0x000000001000019c      0x110 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/crti.o
+
+.dynstr         0x00000000100002ac       0xc1
+ *(.dynstr)
+ .dynstr        0x00000000100002ac       0xc1 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/crti.o
+
+.gnu.version    0x000000001000036e       0x22
+ *(.gnu.version)
+ .gnu.version   0x000000001000036e       0x22 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/crti.o
+
+.gnu.version_d  0x0000000010000390        0x0
+ *(.gnu.version_d)
+ .gnu.version_d
+                0x0000000010000390        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/crti.o
+
+.gnu.version_r  0x0000000010000390       0x20
+ *(.gnu.version_r)
+ .gnu.version_r
+                0x0000000010000390       0x20 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/crti.o
+
+.rel.dyn        0x00000000100003b0       0x38
+ *(.rel.init)
+ *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
+ .rel.text      0x00000000100003b0        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/crti.o
+ *(.rel.fini)
+ *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
+ *(.rel.data.rel.ro .rel.data.rel.ro.* .rel.gnu.linkonce.d.rel.ro.*)
+ *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)
+ .rel.data.rel.local
+                0x00000000100003b0        0x8 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/crti.o
+ *(.rel.tdata .rel.tdata.* .rel.gnu.linkonce.td.*)
+ *(.rel.tbss .rel.tbss.* .rel.gnu.linkonce.tb.*)
+ *(.rel.ctors)
+ *(.rel.dtors)
+ *(.rel.got)
+ .rel.got       0x00000000100003b8       0x20 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/crti.o
+ *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
+ *(.rel.iplt)
+ .rel.iplt      0x00000000100003d8        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/crti.o
+ .rel.init_array
+                0x00000000100003d8        0x8 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/crti.o
+ .rel.fini_array
+                0x00000000100003e0        0x8 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/crti.o
+
+.rela.dyn
+ *(.rela.init)
+ *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)
+ *(.rela.fini)
+ *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*)
+ *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*)
+ *(.rela.tdata .rela.tdata.* .rela.gnu.linkonce.td.*)
+ *(.rela.tbss .rela.tbss.* .rela.gnu.linkonce.tb.*)
+ *(.rela.ctors)
+ *(.rela.dtors)
+ *(.rela.got)
+ *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
+ *(.rela.iplt)
+
+.rel.plt        0x00000000100003e8       0x18
+ *(.rel.plt)
+ .rel.plt       0x00000000100003e8       0x18 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/crti.o
+
+.rela.plt
+ *(.rela.plt)
+
+.rodata
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+
+.note.NaCl.ABI.arm
+                0x0000000010000400       0x18
+ .note.NaCl.ABI.arm
+                0x0000000010000400       0x18 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/crti.o
+
+.rodata1
+ *(.rodata1)
+
+.ARM.extab      0x0000000010000418        0x0
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+ .ARM.extab     0x0000000010000418        0x0 glibc/Release/reverse_arm_pic.o
+                [!provide]                        PROVIDE (__exidx_start, .)
+
+.ARM.exidx      0x0000000010000418        0x8
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+ .ARM.exidx     0x0000000010000418        0x8 glibc/Release/reverse_arm_pic.o
+                [!provide]                        PROVIDE (__exidx_end, .)
+
+.eh_frame_hdr   0x0000000010000420        0x0
+ *(.eh_frame_hdr)
+ .eh_frame_hdr  0x0000000010000420        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/crtn.o
+
+.eh_frame       0x0000000010000420        0x4
+ *(.eh_frame)
+ .eh_frame      0x0000000010000420        0x4 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/crtendS.o
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.exception_ranges
+ *(.exception_ranges .exception_ranges*)
+                0x0000000010000424                . = (ALIGN (0x10000) - ((0x10000 - .) & 0xffff))
+                0x0000000010010424                . = DATA_SEGMENT_ALIGN (0x10000, 0x10000)
+
+.eh_frame
+ *(.eh_frame)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.exception_ranges
+ *(.exception_ranges .exception_ranges*)
+
+.tdata
+ *(.tdata .tdata.* .gnu.linkonce.td.*)
+
+.tbss
+ *(.tbss .tbss.* .gnu.linkonce.tb.*)
+ *(.tcommon)
+
+.preinit_array
+ *(.preinit_array)
+
+.init_array     0x0000000010010424        0x4
+ *(SORT(.init_array.*) SORT(.ctors.*))
+ *(.init_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .ctors)
+ .init_array    0x0000000010010424        0x4 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/crtbeginS.o
+
+.fini_array     0x0000000010010428        0x4
+ *(SORT(.fini_array.*) SORT(.dtors.*))
+ *(.fini_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .dtors)
+ .fini_array    0x0000000010010428        0x4 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/crtbeginS.o
+
+.ctors
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .ctors)
+ *(SORT(.ctors.*))
+ *(.ctors)
+
+.dtors
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .dtors)
+ *(SORT(.dtors.*))
+ *(.dtors)
+
+.jcr            0x000000001001042c        0x4
+ *(.jcr)
+ .jcr           0x000000001001042c        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/crtbeginS.o
+ .jcr           0x000000001001042c        0x4 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/crtendS.o
+
+.data.rel.ro
+ *(.data.rel.ro.local* .gnu.linkonce.d.rel.ro.local.*)
+ *(.data.rel.ro .data.rel.ro.* .gnu.linkonce.d.rel.ro.*)
+
+.dynamic        0x0000000010010430       0xd0
+ *(.dynamic)
+ .dynamic       0x0000000010010430       0xd0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/crti.o
+                0x0000000010010430                _DYNAMIC
+                0x0000000010010500                . = DATA_SEGMENT_RELRO_END (., 0x0)
+
+.got            0x0000000010010500       0x28
+ *(.got.plt)
+ .got.plt       0x0000000010010500       0x18 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/crti.o
+                0x0000000010010500                _GLOBAL_OFFSET_TABLE_
+ *(.igot.plt)
+ .igot.plt      0x0000000010010518        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/crti.o
+ *(.got)
+ .got           0x0000000010010518       0x10 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/crti.o
+ *(.igot)
+
+.data           0x0000000010010528        0x4
+                [!provide]                        PROVIDE (__data_start, .)
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x0000000010010528        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/crti.o
+ .data          0x0000000010010528        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/crtbeginS.o
+ .data.rel.local
+                0x0000000010010528        0x4 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/crtbeginS.o
+                0x0000000010010528                __dso_handle
+ .data          0x000000001001052c        0x0 glibc/Release/reverse_arm_pic.o
+ .data          0x000000001001052c        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/crtendS.o
+ .data          0x000000001001052c        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/crtn.o
+
+.tm_clone_table
+                0x000000001001052c        0x0
+ .tm_clone_table
+                0x000000001001052c        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/crtbeginS.o
+ .tm_clone_table
+                0x000000001001052c        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/crtendS.o
+
+.data1
+ *(.data1)
+                0x000000001001052c                _edata = .
+                [!provide]                        PROVIDE (edata, .)
+                0x000000001001052c                . = .
+                0x000000001001052c                __bss_start = .
+                0x000000001001052c                __bss_start__ = .
+
+.bss            0x000000001001052c        0x4
+ *(.dynbss)
+ .dynbss        0x000000001001052c        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/crti.o
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x000000001001052c        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/crti.o
+ .bss           0x000000001001052c        0x1 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/crtbeginS.o
+ .bss           0x000000001001052d        0x0 glibc/Release/reverse_arm_pic.o
+ .bss           0x000000001001052d        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/crtendS.o
+ .bss           0x000000001001052d        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/crtn.o
+ *(COMMON)
+                0x0000000010010530                . = ALIGN ((. != 0x0)?0x4:0x1)
+ *fill*         0x000000001001052d        0x3 
+                0x0000000010010530                _bss_end__ = .
+                0x0000000010010530                __bss_end__ = .
+                0x0000000010010530                . = ALIGN (0x4)
+                0x0000000010010530                . = SEGMENT_START ("ldata-segment", .)
+                0x0000000010010530                . = ALIGN (0x4)
+                0x0000000010010530                __end__ = .
+                0x0000000010010530                _end = .
+                [!provide]                        PROVIDE (end, .)
+                0x0000000010010530                . = DATA_SEGMENT_END (.)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x0000000000000000       0x94
+ *(.comment)
+ .comment       0x0000000000000000       0x4a /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/crtbeginS.o
+                                         0x4b (size before relaxing)
+ .comment       0x000000000000004a       0x4a glibc/Release/reverse_arm_pic.o
+                                         0x4b (size before relaxing)
+ .comment       0x0000000000000094       0x4b /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/crtendS.o
+
+.ARM.attributes
+                0x0000000000000000       0x33
+ .ARM.attributes
+                0x0000000000000000       0x14 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/crti.o
+ .ARM.attributes
+                0x0000000000000014       0x37 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/crtbeginS.o
+ .ARM.attributes
+                0x000000000000004b       0x37 glibc/Release/reverse_arm_pic.o
+ .ARM.attributes
+                0x0000000000000082       0x37 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/crtendS.o
+ .ARM.attributes
+                0x00000000000000b9       0x14 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_arm_glibc/bin/../lib/gcc/arm-nacl/4.9.2/../../../../arm-nacl/lib/crtn.o
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x0000000000000000       0x20
+ *(.debug_aranges)
+ .debug_aranges
+                0x0000000000000000       0x20 glibc/Release/reverse_arm_pic.o
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x0000000000000000      0x14c
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x0000000000000000      0x14c glibc/Release/reverse_arm_pic.o
+
+.debug_abbrev   0x0000000000000000       0xf8
+ *(.debug_abbrev)
+ .debug_abbrev  0x0000000000000000       0xf8 glibc/Release/reverse_arm_pic.o
+
+.debug_line     0x0000000000000000      0x135
+ *(.debug_line .debug_line.* .debug_line_end)
+ .debug_line    0x0000000000000000      0x135 glibc/Release/reverse_arm_pic.o
+
+.debug_frame    0x0000000000000000       0x38
+ *(.debug_frame)
+ .debug_frame   0x0000000000000000       0x38 glibc/Release/reverse_arm_pic.o
+
+.debug_str      0x0000000000000000      0x112
+ *(.debug_str)
+ .debug_str     0x0000000000000000      0x112 glibc/Release/reverse_arm_pic.o
+                                        0x14b (size before relaxing)
+
+.debug_loc      0x0000000000000000       0x6a
+ *(.debug_loc)
+ .debug_loc     0x0000000000000000       0x6a glibc/Release/reverse_arm_pic.o
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges
+ *(.debug_ranges)
+
+.debug_macro
+ *(.debug_macro)
+
+.gnu.attributes
+ *(.gnu.attributes)
+
+.note.gnu.arm.ident
+ *(.note.gnu.arm.ident)
+
+/DISCARD/
+ *(.note.GNU-stack)
+ *(.gnu_debuglink)
+ *(.gnu.lto_*)
+OUTPUT(glibc/Release/libreverse_arm.so elf32-littlearm-nacl)

@@ -1,0 +1,53 @@
+# Updated by fix_deps.py
+clang-newlib/Release/debugging_x86_64.o: debugging.c \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_errors.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_macros.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_module.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_stdint.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_var.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_bool.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb_core.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_completion_callback.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_resource.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_time.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb_instance.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_instance.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb_messaging.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppp_message_handler.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb_var.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppp.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppp_instance.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_point.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_rect.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_size.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppp_messaging.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/error_handling/error_handling.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/error_handling/string_stream.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/sdk_util/macros.h
+debugging.c:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_errors.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_macros.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_module.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_stdint.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_var.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_bool.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb_core.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_completion_callback.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_resource.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_time.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb_instance.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_instance.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb_messaging.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppp_message_handler.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb_var.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppp.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppp_instance.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_point.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_rect.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_size.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppp_messaging.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/error_handling/error_handling.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/error_handling/string_stream.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/sdk_util/macros.h:

@@ -1,0 +1,4 @@
+# Updated by fix_deps.py
+glibc/Release/eightball_x86_32_pic.o: eightball.cc eightball.h
+eightball.cc:
+eightball.h:

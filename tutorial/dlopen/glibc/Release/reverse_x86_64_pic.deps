@@ -1,0 +1,4 @@
+# Updated by fix_deps.py
+glibc/Release/reverse_x86_64_pic.o: reverse.cc reverse.h
+reverse.cc:
+reverse.h:

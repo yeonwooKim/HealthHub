@@ -1,0 +1,57 @@
+# Updated by fix_deps.py
+glibc/Release/multi_platform_arm.o: multi_platform.cc \
+ /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/cpp/instance.h \
+ /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_instance.h \
+ /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_macros.h \
+ /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_stdint.h \
+ /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_resource.h \
+ /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb_console.h \
+ /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_bool.h \
+ /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_var.h \
+ /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/cpp/instance_handle.h \
+ /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/cpp/view.h \
+ /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/cpp/resource.h \
+ /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/cpp/pass_ref.h \
+ /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/cpp/rect.h \
+ /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_rect.h \
+ /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_point.h \
+ /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_size.h \
+ /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/cpp/point.h \
+ /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/cpp/size.h \
+ /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/cpp/logging.h \
+ /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/cpp/module.h \
+ /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_module.h \
+ /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb.h \
+ /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb_core.h \
+ /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_completion_callback.h \
+ /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_time.h \
+ /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/cpp/core.h \
+ /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/cpp/var.h
+multi_platform.cc:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/cpp/instance.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_instance.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_macros.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_stdint.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_resource.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb_console.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_bool.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_var.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/cpp/instance_handle.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/cpp/view.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/cpp/resource.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/cpp/pass_ref.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/cpp/rect.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_rect.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_point.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_size.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/cpp/point.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/cpp/size.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/cpp/logging.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/cpp/module.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_module.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb_core.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_completion_callback.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_time.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/cpp/core.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/cpp/var.h:

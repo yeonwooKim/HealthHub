@@ -1,0 +1,65 @@
+# Updated by fix_deps.py
+pnacl/Release/nacl_io_demo.o: nacl_io_demo.c nacl_io_demo.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_instance.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_macros.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_stdint.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_var.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_bool.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb_var.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_module.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_resource.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb_var_array.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb_var_dictionary.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/sdk_util/macros.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/pnacl/sys/ioctl.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/pnacl/sys/mount.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/pnacl/sys/select.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/pnacl/sys/time.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_errors.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb_instance.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb_messaging.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppp_message_handler.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppp.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppp_instance.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_point.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_rect.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_size.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppp_messaging.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/nacl_io/ioctl.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/nacl_io/nacl_io.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/nacl_io/ostypes.h \
+  handlers.h queue.h
+nacl_io_demo.c:
+nacl_io_demo.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_instance.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_macros.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_stdint.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_var.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_bool.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb_var.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_module.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_resource.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb_var_array.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb_var_dictionary.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/sdk_util/macros.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/pnacl/sys/ioctl.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/pnacl/sys/mount.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/pnacl/sys/select.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/pnacl/sys/time.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_errors.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb_instance.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb_messaging.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppp_message_handler.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppp.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppp_instance.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_point.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_rect.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_size.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppp_messaging.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/nacl_io/ioctl.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/nacl_io/nacl_io.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/nacl_io/ostypes.h:
+handlers.h:
+queue.h:

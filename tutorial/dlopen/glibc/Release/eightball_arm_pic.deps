@@ -1,0 +1,4 @@
+# Updated by fix_deps.py
+glibc/Release/eightball_arm_pic.o: eightball.cc eightball.h
+eightball.cc:
+eightball.h:

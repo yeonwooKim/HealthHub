@@ -1,0 +1,720 @@
+Archive member included because of file (symbol)
+
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(plugin_main_irt_21ce9d26.o)
+                              /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o (main)
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(ppapi_plugin_main_399d0cf7.o)
+                              /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(plugin_main_irt_21ce9d26.o) (PpapiPluginMain)
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(ppapi_plugin_start_8da67623.o)
+                              /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(ppapi_plugin_main_399d0cf7.o) (PpapiPluginStart)
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(thread_creator_ccf263e1.o)
+                              /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(ppapi_plugin_start_8da67623.o) (__nacl_register_thread_creator)
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libc_nonshared.a(elf-init.ons)
+                              /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o (__libc_csu_fini)
+
+Discarded input sections
+
+ .note.ABI-tag  0x0000000000000000       0x20 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crti.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/32/crtbegin.o
+ .group         0x0000000000000000        0x8 glibc/Release/multi_platform_x86_32.o
+ .group         0x0000000000000000        0x8 glibc/Release/multi_platform_x86_32.o
+ .group         0x0000000000000000        0x8 glibc/Release/multi_platform_x86_32.o
+ .group         0x0000000000000000        0x8 glibc/Release/multi_platform_x86_32.o
+ .group         0x0000000000000000        0x8 glibc/Release/multi_platform_x86_32.o
+ .group         0x0000000000000000        0x8 glibc/Release/multi_platform_x86_32.o
+ .group         0x0000000000000000        0x8 glibc/Release/multi_platform_x86_32.o
+ .group         0x0000000000000000        0x8 glibc/Release/multi_platform_x86_32.o
+ .group         0x0000000000000000        0x8 glibc/Release/multi_platform_x86_32.o
+ .group         0x0000000000000000        0x8 glibc/Release/multi_platform_x86_32.o
+ .group         0x0000000000000000        0x8 glibc/Release/multi_platform_x86_32.o
+ .group         0x0000000000000000        0x8 glibc/Release/multi_platform_x86_32.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 glibc/Release/multi_platform_x86_32.o
+ .group         0x0000000000000000        0x8 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(plugin_main_irt_21ce9d26.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(plugin_main_irt_21ce9d26.o)
+ .group         0x0000000000000000        0x8 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(ppapi_plugin_main_399d0cf7.o)
+ .text.__i686.get_pc_thunk.bx
+                0x0000000000000000       0x20 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(ppapi_plugin_main_399d0cf7.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(ppapi_plugin_main_399d0cf7.o)
+ .group         0x0000000000000000        0x8 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(ppapi_plugin_start_8da67623.o)
+ .text.__i686.get_pc_thunk.bx
+                0x0000000000000000       0x20 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(ppapi_plugin_start_8da67623.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(ppapi_plugin_start_8da67623.o)
+ .group         0x0000000000000000        0x8 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(thread_creator_ccf263e1.o)
+ .text.__i686.get_pc_thunk.bx
+                0x0000000000000000       0x20 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(thread_creator_ccf263e1.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(thread_creator_ccf263e1.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libc_nonshared.a(elf-init.ons)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/32/crtend.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crtn.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crti.o
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/32/crtbegin.o
+LOAD glibc/Release/multi_platform_x86_32.o
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/lib/glibc_x86_32/Release/libppapi_cpp.so
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi.so
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libpthread.so
+START GROUP
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libpthread.so.11835d88
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libpthread_nonshared.a
+END GROUP
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libstdc++.so
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libm.so
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libgcc_s.so
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/32/libgcc.a
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libpthread.so
+START GROUP
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libpthread.so.11835d88
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libpthread_nonshared.a
+END GROUP
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libc.so
+START GROUP
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libc.so.11835d88
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libc_nonshared.a
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/ld-nacl-x86-32.so.1
+END GROUP
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libgcc_s.so
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/32/libgcc.a
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/32/crtend.o
+LOAD /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crtn.o
+                0x0000000001000000                . = 0x1000000
+                0x0000000001000000                PROVIDE (__executable_start, .)
+
+.init           0x0000000001000000       0xa0
+ *(.init)
+ .init          0x0000000001000000       0x40 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crti.o
+                0x0000000001000000                _init
+ .init          0x0000000001000040       0x20 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/32/crtbegin.o
+ .init          0x0000000001000060       0x20 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/32/crtend.o
+ .init          0x0000000001000080       0x20 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crtn.o
+                0x00000000010000a0                . = ALIGN (0x20)
+
+.plt            0x00000000010000a0      0x7c0
+ *(.plt)
+ .plt           0x00000000010000a0      0x7c0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+                0x00000000010000e0                _ZN2pp8InstanceD2Ev
+                0x0000000001000120                __deregister_frame_info@@GLIBC_2.0
+                0x0000000001000160                _ZN2pp3VarC1EPKc
+                0x00000000010001a0                pthread_join@@GLIBC_2.0
+                0x0000000001000220                _ZdlPv@@GLIBCXX_3.4
+                0x0000000001000260                write@@GLIBC_2.0
+                0x00000000010002a0                __register_frame_info@@GLIBC_2.0
+                0x00000000010002e0                _ZN2pp8Instance13DidChangeViewERKNS_4ViewE
+                0x0000000001000320                __libc_start_main@@GLIBC_2.0
+                0x0000000001000360                PPP_GetInterface
+                0x00000000010003a0                _exit@@GLIBC_2.0
+                0x00000000010003e0                _ZN2pp8Instance13DidChangeViewERKNS_4RectES3_
+                0x0000000001000420                PPP_InitializeModule
+                0x0000000001000460                _ZN2pp8Instance16HandleInputEventERKNS_10InputEventE
+                0x00000000010004a0                _ZN2pp8Instance13HandleMessageERKNS_3VarE
+                0x00000000010004e0                strlen@@GLIBC_2.0
+                0x0000000001000520                _ZN2pp8Instance18HandleDocumentLoadERKNS_9URLLoaderE
+                0x0000000001000560                _ZN2pp8Instance11PostMessageERKNS_3VarE
+                0x00000000010005a0                _Znwj@@GLIBCXX_3.4
+                0x00000000010005e0                _ZN2pp8Instance14DidChangeFocusEb
+                0x0000000001000620                pthread_create@@GLIBC_2.1
+                0x0000000001000660                _ZN2pp8InstanceC2Ei
+                0x00000000010006a0                _ZN2pp3VarD1Ev
+                0x00000000010006e0                _ZN2pp6Module4InitEv
+                0x0000000001000720                __gxx_personality_v0@@CXXABI_1.3
+                0x0000000001000760                _ZN2pp6ModuleC2Ev
+                0x00000000010007a0                _ZN2pp6ModuleD2Ev
+                0x00000000010007e0                PPP_ShutdownModule
+                0x0000000001000820                _Unwind_Resume@@GCC_3.0
+
+.text           0x0000000001000860     0xf7a0
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0x0000000001000860       0x80 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+                0x0000000001000860                _start
+ .text          0x00000000010008e0        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crti.o
+ .text          0x00000000010008e0      0x160 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/32/crtbegin.o
+ .text          0x0000000001000a40       0xa0 glibc/Release/multi_platform_x86_32.o
+                0x0000000001000a40                _ZN2pp12CreateModuleEv
+ .text._ZN6Module14CreateInstanceEi
+                0x0000000001000ae0       0xa0 glibc/Release/multi_platform_x86_32.o
+                0x0000000001000ae0                _ZN6Module14CreateInstanceEi
+ .text._ZN8Instance4InitEjPPKcS2_
+                0x0000000001000b80       0xc0 glibc/Release/multi_platform_x86_32.o
+                0x0000000001000b80                _ZN8Instance4InitEjPPKcS2_
+ .text._ZN8InstanceD0Ev
+                0x0000000001000c40       0x40 glibc/Release/multi_platform_x86_32.o
+                0x0000000001000c40                _ZN8InstanceD0Ev
+ .text._ZN8InstanceD1Ev
+                0x0000000001000c80       0x20 glibc/Release/multi_platform_x86_32.o
+                0x0000000001000c80                _ZN8InstanceD1Ev
+ .text._ZN6ModuleD0Ev
+                0x0000000001000ca0       0x40 glibc/Release/multi_platform_x86_32.o
+                0x0000000001000ca0                _ZN6ModuleD0Ev
+ .text._ZN6ModuleD1Ev
+                0x0000000001000ce0       0x20 glibc/Release/multi_platform_x86_32.o
+                0x0000000001000ce0                _ZN6ModuleD1Ev
+ .text          0x0000000001000d00       0x60 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(plugin_main_irt_21ce9d26.o)
+                0x0000000001000d00                main
+ .text.__i686.get_pc_thunk.bx
+                0x0000000001000d60       0x20 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(plugin_main_irt_21ce9d26.o)
+                0x0000000001000d60                __i686.get_pc_thunk.bx
+ .text          0x0000000001000d80       0x60 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(ppapi_plugin_main_399d0cf7.o)
+                0x0000000001000d80                PpapiPluginMain
+ .text          0x0000000001000de0      0x220 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(ppapi_plugin_start_8da67623.o)
+                0x0000000001000e60                PpapiPluginStart
+ .text          0x0000000001001000      0x140 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(thread_creator_ccf263e1.o)
+                0x0000000001001000                __nacl_register_thread_creator
+ .text          0x0000000001001140       0xe0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libc_nonshared.a(elf-init.ons)
+                0x0000000001001140                __libc_csu_fini
+                0x0000000001001160                __libc_csu_init
+ .text          0x0000000001001220       0x80 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/32/crtend.o
+ .text          0x00000000010012a0        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crtn.o
+ *(.text.*personality*)
+ *(.gnu.warning)
+ *(.fini)
+ .fini          0x00000000010012a0       0x40 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crti.o
+                0x00000000010012a0                _fini
+ .fini          0x00000000010012e0       0x20 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/32/crtbegin.o
+ .fini          0x0000000001001300       0x20 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crtn.o
+                0x0000000001010000                . = ALIGN (0x10000)
+ *fill*         0x0000000001001320     0xece0 90909090
+                0x0000000001010000                PROVIDE (__etext, .)
+                0x0000000001010000                PROVIDE (_etext, .)
+                0x0000000001010000                PROVIDE (etext, .)
+
+.iplt           0x0000000001010000        0x0
+ .iplt          0x0000000000000000        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+                0x0000000011000000                . = 0x11000000
+
+.interp         0x0000000011000000       0x19
+ *(.interp)
+ .interp        0x0000000011000000       0x19 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+
+.note.gnu.build-id
+                0x000000001100001c       0x24
+                0x000000001100001c                PROVIDE (__note_gnu_build_id_start, .)
+ *(.note.gnu.build-id)
+ .note.gnu.build-id
+                0x000000001100001c       0x24 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+                0x0000000011000040                PROVIDE (__note_gnu_build_id_end, .)
+
+.dummy
+
+.hash           0x0000000011000040      0x150
+ *(.hash)
+ .hash          0x0000000011000040      0x150 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+
+.gnu.hash
+ *(.gnu.hash)
+
+.dynsym         0x0000000011000190      0x2d0
+ *(.dynsym)
+ .dynsym        0x0000000011000190      0x2d0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+
+.dynstr         0x0000000011000460      0x3de
+ *(.dynstr)
+ .dynstr        0x0000000011000460      0x3de /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+
+.gnu.version    0x000000001100083e       0x5a
+ *(.gnu.version)
+ .gnu.version   0x000000001100083e       0x5a /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+
+.gnu.version_d  0x0000000011000898        0x0
+ *(.gnu.version_d)
+ .gnu.version_d
+                0x0000000000000000        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+
+.gnu.version_r  0x0000000011000898       0xb0
+ *(.gnu.version_r)
+ .gnu.version_r
+                0x0000000011000898       0xb0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+
+.rel.dyn        0x0000000011000948        0x0
+ .rel.iplt      0x0000000000000000        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+ .rel.eh_frame  0x0000000000000000        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text       0x0000000011000948        0x0
+ *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
+ .rel.text      0x0000000000000000        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+ .rel.text._ZN6Module14CreateInstanceEi
+                0x0000000000000000        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+ .rel.text._ZN8Instance4InitEjPPKcS2_
+                0x0000000000000000        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+ .rel.text._ZN8InstanceD0Ev
+                0x0000000000000000        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+ .rel.text._ZN8InstanceD1Ev
+                0x0000000000000000        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+ .rel.text._ZN6ModuleD0Ev
+                0x0000000000000000        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+ .rel.text._ZN6ModuleD1Ev
+                0x0000000000000000        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+
+.rela.text
+ *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata     0x0000000011000948        0x0
+ *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
+ .rel.rodata._ZTV6Module
+                0x0000000000000000        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+ .rel.rodata._ZTI6Module
+                0x0000000000000000        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+ .rel.rodata._ZTV8Instance
+                0x0000000000000000        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+ .rel.rodata._ZTI8Instance
+                0x0000000000000000        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+
+.rela.rodata
+ *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*)
+
+.rel.data.rel.ro
+                0x0000000011000948        0x0
+ *(.rel.data.rel.ro* .rel.gnu.linkonce.d.rel.ro.*)
+ .rel.data.rel.ro
+                0x0000000000000000        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+
+.rela.data.rel.ro
+ *(.rela.data.rel.ro* .rela.gnu.linkonce.d.rel.ro.*)
+
+.rel.data
+ *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)
+
+.rela.data
+ *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*)
+
+.rel.tdata
+ *(.rel.tdata .rel.tdata.* .rel.gnu.linkonce.td.*)
+
+.rela.tdata
+ *(.rela.tdata .rela.tdata.* .rela.gnu.linkonce.td.*)
+
+.rel.tbss
+ *(.rel.tbss .rel.tbss.* .rel.gnu.linkonce.tb.*)
+
+.rela.tbss
+ *(.rela.tbss .rela.tbss.* .rela.gnu.linkonce.tb.*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got        0x0000000011000948       0x10
+ *(.rel.got)
+ .rel.got       0x0000000011000948       0x10 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss        0x0000000011000958       0x18
+ *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
+ .rel.bss       0x0000000011000958       0x18 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+
+.rela.bss
+ *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
+
+.rel.plt        0x0000000011000970       0xf0
+ *(.rel.plt)
+ .rel.plt       0x0000000011000970       0xf0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+
+.rela.plt
+ *(.rela.plt)
+
+.rodata         0x0000000011000a60      0x157
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata.cst4   0x0000000011000a60        0x4 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+                0x0000000011000a60                _IO_stdin_used
+ .rodata.str1.1
+                0x0000000011000a64       0x17 glibc/Release/multi_platform_x86_32.o
+ *fill*         0x0000000011000a7b        0x5 
+ .rodata._ZTV6Module
+                0x0000000011000a80       0x18 glibc/Release/multi_platform_x86_32.o
+                0x0000000011000a80                _ZTV6Module
+ .rodata._ZTI6Module
+                0x0000000011000a98        0xc glibc/Release/multi_platform_x86_32.o
+                0x0000000011000a98                _ZTI6Module
+ .rodata._ZTS6Module
+                0x0000000011000aa4        0x8 glibc/Release/multi_platform_x86_32.o
+                0x0000000011000aa4                _ZTS6Module
+ *fill*         0x0000000011000aac       0x14 
+ .rodata._ZTV8Instance
+                0x0000000011000ac0       0x2c glibc/Release/multi_platform_x86_32.o
+                0x0000000011000ac0                _ZTV8Instance
+ .rodata._ZTI8Instance
+                0x0000000011000aec        0xc glibc/Release/multi_platform_x86_32.o
+                0x0000000011000aec                _ZTI8Instance
+ .rodata._ZTS8Instance
+                0x0000000011000af8        0xa glibc/Release/multi_platform_x86_32.o
+                0x0000000011000af8                _ZTS8Instance
+ *fill*         0x0000000011000b02        0x2 
+ .rodata.str1.4
+                0x0000000011000b04       0x9c /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(ppapi_plugin_start_8da67623.o)
+                                         0x99 (size before relaxing)
+ .rodata.str1.1
+                0x0000000011000ba0       0x17 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(ppapi_plugin_start_8da67623.o)
+
+.rodata1
+ *(.rodata1)
+
+.eh_frame_hdr   0x0000000011000bb8       0x4c
+ *(.eh_frame_hdr)
+ .eh_frame_hdr  0x0000000011000bb8       0x4c glibc/Release/multi_platform_x86_32.o
+
+.eh_frame       0x0000000011000c04      0x14c
+ *(.eh_frame)
+ .eh_frame      0x0000000011000c04       0x3c /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+                                         0x40 (size before relaxing)
+ .eh_frame      0x0000000011000c40        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/32/crtbegin.o
+ .eh_frame      0x0000000011000c40      0x10c glibc/Release/multi_platform_x86_32.o
+ .eh_frame      0x0000000011000d4c        0x4 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/32/crtend.o
+
+.gcc_except_table
+                0x0000000011000d50       0x38
+ *(.gcc_except_table .gcc_except_table.*)
+ .gcc_except_table
+                0x0000000011000d50       0x38 glibc/Release/multi_platform_x86_32.o
+                0x0000000011000d88                . = (ALIGN (0x10000) - ((0x10000 - .) & 0xffff))
+                0x0000000011010d88                . = DATA_SEGMENT_ALIGN (0x10000, 0x10000)
+
+.eh_frame
+ *(.eh_frame)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.tdata          0x0000000011010d88        0x0
+                0x0000000011010d88                PROVIDE (__tls_template_start, .)
+ *(.tdata .tdata.* .gnu.linkonce.td.*)
+                0x0000000011010d88                PROVIDE (__tls_template_tdata_end, .)
+
+.tbss
+ *(.tbss .tbss.* .gnu.linkonce.tb.*)
+ *(.tcommon)
+                0x0000000011010d88                PROVIDE (__tls_template_end, .)
+                0x0000000000000001                PROVIDE (__tls_template_align, MAX (ALIGNOF (.tdata), ALIGNOF (.tbss)))
+
+.preinit_array  0x0000000011010d88        0x0
+                0x0000000011010d88                PROVIDE (__preinit_array_start, .)
+ *(.preinit_array)
+                0x0000000011010d88                PROVIDE (__preinit_array_end, .)
+
+.init_array     0x0000000011010d88        0x0
+                0x0000000011010d88                PROVIDE (__init_array_start, .)
+ *(SORT(.init_array.*))
+ *(.init_array)
+                0x0000000011010d88                PROVIDE (__init_array_end, .)
+
+.fini_array     0x0000000011010d88        0x0
+                0x0000000011010d88                PROVIDE (__fini_array_start, .)
+ *(.fini_array)
+ *(SORT(.fini_array.*))
+                0x0000000011010d88                PROVIDE (__fini_array_end, .)
+
+.ctors          0x0000000011010d88        0x8
+ *crtbegin.o(.ctors)
+ .ctors         0x0000000011010d88        0x4 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/32/crtbegin.o
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .ctors)
+ *(SORT(.ctors.*))
+ *(.ctors)
+ .ctors         0x0000000011010d8c        0x4 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/32/crtend.o
+
+.dtors          0x0000000011010d90        0x8
+ *crtbegin.o(.dtors)
+ .dtors         0x0000000011010d90        0x4 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/32/crtbegin.o
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .dtors)
+ *(SORT(.dtors.*))
+ *(.dtors)
+ .dtors         0x0000000011010d94        0x4 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/32/crtend.o
+                0x0000000011010d94                __DTOR_END__
+
+.jcr            0x0000000011010d98        0x4
+ *(.jcr)
+ .jcr           0x0000000011010d98        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/32/crtbegin.o
+ .jcr           0x0000000011010d98        0x4 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/32/crtend.o
+
+.data.rel.ro    0x0000000011010d9c       0x14
+ *(.data.rel.ro.local* .gnu.linkonce.d.rel.ro.local.*)
+ .data.rel.ro.local
+                0x0000000011010d9c        0x8 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(thread_creator_ccf263e1.o)
+ *(.data.rel.ro* .gnu.linkonce.d.rel.ro.*)
+ .data.rel.ro   0x0000000011010da4        0xc /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(ppapi_plugin_main_399d0cf7.o)
+
+.dynamic        0x0000000011010db0       0xe8
+ *(.dynamic)
+ .dynamic       0x0000000011010db0       0xe8 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+                0x0000000011010db0                _DYNAMIC
+
+.got            0x0000000011010e98        0x8
+ *(.got)
+ .got           0x0000000011010e98        0x8 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+                0x0000000011010ea0                . = DATA_SEGMENT_RELRO_END (., 0xc)
+
+.got.plt        0x0000000011010ea0       0x84
+ *(.got.plt)
+ .got.plt       0x0000000011010ea0       0x84 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+                0x0000000011010ea0                _GLOBAL_OFFSET_TABLE_
+
+.data           0x0000000011010f24        0x4
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x0000000011010f24        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+ .data          0x0000000011010f24        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crti.o
+ .data          0x0000000011010f24        0x4 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/32/crtbegin.o
+                0x0000000011010f24                __dso_handle
+ .data          0x0000000011010f28        0x0 glibc/Release/multi_platform_x86_32.o
+ .data          0x0000000011010f28        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(plugin_main_irt_21ce9d26.o)
+ .data          0x0000000011010f28        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(ppapi_plugin_main_399d0cf7.o)
+ .data          0x0000000011010f28        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(ppapi_plugin_start_8da67623.o)
+ .data          0x0000000011010f28        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(thread_creator_ccf263e1.o)
+ .data          0x0000000011010f28        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libc_nonshared.a(elf-init.ons)
+ .data          0x0000000011010f28        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/32/crtend.o
+ .data          0x0000000011010f28        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crtn.o
+ *(.gnu.linkonce.d.*personality*)
+
+.igot.plt       0x0000000011010f28        0x0
+ .igot.plt      0x0000000000000000        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+
+.data1
+ *(.data1)
+                0x0000000011010f28                _edata = .
+                0x0000000011010f28                PROVIDE (edata, .)
+                0x0000000011010f28                . = DATA_SEGMENT_END (.)
+                0x0000000011020000                . = ALIGN (0x10000)
+                0x0000000011020000                __bss_start = .
+
+.bss            0x0000000011020000       0x78
+ *(.dynbss)
+ .dynbss        0x0000000011020000       0x58 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+                0x0000000011020000                _ZTIN2pp8InstanceE
+                0x0000000011020020                _ZTVN10__cxxabiv120__si_class_type_infoE@@CXXABI_1.3
+                0x0000000011020050                _ZTIN2pp6ModuleE
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x0000000011020058        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+ .bss           0x0000000011020058        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crti.o
+ .bss           0x0000000011020058       0x20 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/32/crtbegin.o
+ .bss           0x0000000011020078        0x0 glibc/Release/multi_platform_x86_32.o
+ .bss           0x0000000011020078        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(plugin_main_irt_21ce9d26.o)
+ .bss           0x0000000011020078        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(ppapi_plugin_main_399d0cf7.o)
+ .bss           0x0000000011020078        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(ppapi_plugin_start_8da67623.o)
+ .bss           0x0000000011020078        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(thread_creator_ccf263e1.o)
+ .bss           0x0000000011020078        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libc_nonshared.a(elf-init.ons)
+ .bss           0x0000000011020078        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/32/crtend.o
+ .bss           0x0000000011020078        0x0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crtn.o
+ *(COMMON)
+                0x0000000011020078                . = ALIGN ((. != 0x0)?0x4:0x1)
+                0x0000000011020078                . = ALIGN (0x4)
+                0x0000000011020078                . = ALIGN (0x4)
+                0x0000000011020078                _end = .
+                0x0000000011020078                PROVIDE (end, .)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x0000000000000000       0x88
+ *(.comment)
+ .comment       0x0000000000000000       0x88 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+                                        0x112 (size before relaxing)
+ .comment       0x0000000000000000       0x89 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crti.o
+ .comment       0x0000000000000000       0x89 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/32/crtbegin.o
+ .comment       0x0000000000000000       0x89 glibc/Release/multi_platform_x86_32.o
+ .comment       0x0000000000000000       0x89 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(plugin_main_irt_21ce9d26.o)
+ .comment       0x0000000000000000       0x89 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(ppapi_plugin_main_399d0cf7.o)
+ .comment       0x0000000000000000       0x89 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(ppapi_plugin_start_8da67623.o)
+ .comment       0x0000000000000000       0x89 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(thread_creator_ccf263e1.o)
+ .comment       0x0000000000000000       0x89 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libc_nonshared.a(elf-init.ons)
+ .comment       0x0000000000000000       0x89 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/32/crtend.o
+ .comment       0x0000000000000000       0x89 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crtn.o
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x0000000000000000      0x110
+ *(.debug_aranges)
+ .debug_aranges
+                0x0000000000000000       0x20 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+ .debug_aranges
+                0x0000000000000020       0x50 glibc/Release/multi_platform_x86_32.o
+ .debug_aranges
+                0x0000000000000070       0x20 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(plugin_main_irt_21ce9d26.o)
+ .debug_aranges
+                0x0000000000000090       0x20 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(ppapi_plugin_main_399d0cf7.o)
+ .debug_aranges
+                0x00000000000000b0       0x20 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(ppapi_plugin_start_8da67623.o)
+ .debug_aranges
+                0x00000000000000d0       0x20 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(thread_creator_ccf263e1.o)
+ .debug_aranges
+                0x00000000000000f0       0x20 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libc_nonshared.a(elf-init.ons)
+
+.debug_pubnames
+                0x0000000000000000      0x1c6
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x0000000000000000       0x42 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+ .debug_pubnames
+                0x0000000000000042       0xad glibc/Release/multi_platform_x86_32.o
+ .debug_pubnames
+                0x00000000000000ef       0x1b /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(plugin_main_irt_21ce9d26.o)
+ .debug_pubnames
+                0x000000000000010a       0x26 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(ppapi_plugin_main_399d0cf7.o)
+ .debug_pubnames
+                0x0000000000000130       0x27 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(ppapi_plugin_start_8da67623.o)
+ .debug_pubnames
+                0x0000000000000157       0x35 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(thread_creator_ccf263e1.o)
+ .debug_pubnames
+                0x000000000000018c       0x3a /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libc_nonshared.a(elf-init.ons)
+
+.debug_info     0x0000000000000000     0x1efd
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x0000000000000000      0x197 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+ .debug_info    0x0000000000000197     0x114a glibc/Release/multi_platform_x86_32.o
+ .debug_info    0x00000000000012e1       0x8f /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(plugin_main_irt_21ce9d26.o)
+ .debug_info    0x0000000000001370      0x145 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(ppapi_plugin_main_399d0cf7.o)
+ .debug_info    0x00000000000014b5      0x3eb /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(ppapi_plugin_start_8da67623.o)
+ .debug_info    0x00000000000018a0      0x542 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(thread_creator_ccf263e1.o)
+ .debug_info    0x0000000000001de2      0x11b /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libc_nonshared.a(elf-init.ons)
+
+.debug_abbrev   0x0000000000000000      0x8df
+ *(.debug_abbrev)
+ .debug_abbrev  0x0000000000000000       0xe6 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+ .debug_abbrev  0x00000000000000e6      0x318 glibc/Release/multi_platform_x86_32.o
+ .debug_abbrev  0x00000000000003fe       0x4a /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(plugin_main_irt_21ce9d26.o)
+ .debug_abbrev  0x0000000000000448       0xbb /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(ppapi_plugin_main_399d0cf7.o)
+ .debug_abbrev  0x0000000000000503      0x1ba /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(ppapi_plugin_start_8da67623.o)
+ .debug_abbrev  0x00000000000006bd      0x13d /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(thread_creator_ccf263e1.o)
+ .debug_abbrev  0x00000000000007fa       0xe5 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libc_nonshared.a(elf-init.ons)
+
+.debug_line     0x0000000000000000      0xeea
+ *(.debug_line)
+ .debug_line    0x0000000000000000       0x95 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+ .debug_line    0x0000000000000095      0x5a3 glibc/Release/multi_platform_x86_32.o
+ .debug_line    0x0000000000000638       0x46 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(plugin_main_irt_21ce9d26.o)
+ .debug_line    0x000000000000067e      0x148 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(ppapi_plugin_main_399d0cf7.o)
+ .debug_line    0x00000000000007c6      0x3b0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(ppapi_plugin_start_8da67623.o)
+ .debug_line    0x0000000000000b76      0x297 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(thread_creator_ccf263e1.o)
+ .debug_line    0x0000000000000e0d       0xdd /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libc_nonshared.a(elf-init.ons)
+
+.debug_frame    0x0000000000000000      0x1a8
+ *(.debug_frame)
+ .debug_frame   0x0000000000000000       0x34 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+ .debug_frame   0x0000000000000034       0x38 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(plugin_main_irt_21ce9d26.o)
+ .debug_frame   0x000000000000006c       0x30 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(ppapi_plugin_main_399d0cf7.o)
+ .debug_frame   0x000000000000009c       0x54 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(ppapi_plugin_start_8da67623.o)
+ .debug_frame   0x00000000000000f0       0x68 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(thread_creator_ccf263e1.o)
+ .debug_frame   0x0000000000000158       0x50 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libc_nonshared.a(elf-init.ons)
+
+.debug_str      0x0000000000000000      0xd60
+ *(.debug_str)
+ .debug_str     0x0000000000000000      0x174 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+                                        0x304 (size before relaxing)
+ .debug_str     0x0000000000000174      0x7a5 glibc/Release/multi_platform_x86_32.o
+                                        0x927 (size before relaxing)
+ .debug_str     0x0000000000000919       0x63 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(plugin_main_irt_21ce9d26.o)
+                                        0x16f (size before relaxing)
+ .debug_str     0x000000000000097c       0xa4 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(ppapi_plugin_main_399d0cf7.o)
+                                        0x1f2 (size before relaxing)
+ .debug_str     0x0000000000000a20      0x129 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(ppapi_plugin_start_8da67623.o)
+                                        0x312 (size before relaxing)
+ .debug_str     0x0000000000000b49      0x1c3 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(thread_creator_ccf263e1.o)
+                                        0x420 (size before relaxing)
+ .debug_str     0x0000000000000d0c       0x54 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libc_nonshared.a(elf-init.ons)
+                                        0x157 (size before relaxing)
+
+.debug_loc      0x0000000000000000      0x420
+ *(.debug_loc)
+ .debug_loc     0x0000000000000000       0x6a /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/crt1.o
+ .debug_loc     0x000000000000006a      0x174 glibc/Release/multi_platform_x86_32.o
+ .debug_loc     0x00000000000001de       0x2c /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(plugin_main_irt_21ce9d26.o)
+ .debug_loc     0x000000000000020a       0x2c /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(ppapi_plugin_main_399d0cf7.o)
+ .debug_loc     0x0000000000000236       0xd0 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(ppapi_plugin_start_8da67623.o)
+ .debug_loc     0x0000000000000306       0x84 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libppapi_stub.a(thread_creator_ccf263e1.o)
+ .debug_loc     0x000000000000038a       0x96 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/toolchain/mac_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib32/libc_nonshared.a(elf-init.ons)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges   0x0000000000000000       0x48
+ *(.debug_ranges)
+ .debug_ranges  0x0000000000000000       0x48 glibc/Release/multi_platform_x86_32.o
+
+.gnu.attributes
+ *(.gnu.attributes)
+
+/DISCARD/
+ *(.note.GNU-stack)
+ *(.gnu_debuglink)
+ *(.note.ABI-tag)
+ *(.interp)
+OUTPUT(glibc/Release/_platform_specific/x86-32/multi_platform_unstripped_x86_32.nexe elf32-i386-nacl)
