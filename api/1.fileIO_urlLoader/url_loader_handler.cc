@@ -159,6 +159,8 @@ void URLLoaderHandler::ReportResult(const std::string& fname,
     printf("URLLoaderHandler::ReportResult(Err). %s\n", text.c_str());
   fflush(stdout);
   if (instance_) {
+		// URLLOADER prefix attached to the first index of VarArray
+		// to differentiate message for fileIO and for urlLoader.
 		pp::VarArray message;
 		message.Set(0, "URLLOADER");
     pp::Var var_result(fname + "\n" + text);

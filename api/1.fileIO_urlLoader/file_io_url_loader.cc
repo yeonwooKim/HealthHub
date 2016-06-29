@@ -2,8 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-/// @file file_io.cc
-/// This example demonstrates the use of persistent file I/O
+/// @file file_io_url_loader.cc
 
 #define __STDC_LIMIT_MACROS
 #include <stdio.h>
@@ -53,7 +52,7 @@ static const char kMessageArgumentSeparator = ':';
 /// a new Instance for each occurrence of the <embed> tag that has these
 /// attributes:
 ///     type="application/x-nacl"
-///     src="file_io.nmf"
+///     src="file_io_url_loader.nmf"
 class FileIoUrlLoaderInstance : public pp::Instance {
  public:
   /// The constructor creates the plugin-side instance.
@@ -93,6 +92,8 @@ class FileIoUrlLoaderInstance : public pp::Instance {
 
   void PostArrayMessage(const char* command, const StringVector& strings) {
     pp::VarArray message;
+		// FILEIO prefix attached to the first index of VarArray
+		// to differentiate message for fileIO and for urlLoader.
 		message.Set(0, "FILEIO");
 		message.Set(1, command);
     for (size_t i = 0; i < strings.size(); ++i) {
@@ -123,7 +124,7 @@ class FileIoUrlLoaderInstance : public pp::Instance {
     if (!var_message.is_array() && !var_message.is_string())
       return;
 		
-		else if (var_message.is_string()) { // URL Loader
+		else if (var_message.is_string()) { ///< message from URL Loader
 			std::string message = var_message.AsString();
 			if (message.find(kLoadUrlMethodId) == 0) {
 				// The argument to getUrl is everything after the first ':'.
@@ -145,7 +146,7 @@ class FileIoUrlLoaderInstance : public pp::Instance {
 			}
 		}
 
-		else if (var_message.is_array()) { // File IO
+		else if (var_message.is_array()) { ///< message from file IO
 			// Message should be an array with the following elements:
 			// [command, path, extra args]
 			pp::VarArray message(var_message);

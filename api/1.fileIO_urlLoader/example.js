@@ -120,6 +120,8 @@ function handleMessage(message_event) {
 	var fromFile = 'FILEIO';
 	var fromUrl = 'URLLOADER';
 	var rawMsg = message_event.data;
+	// Parse the raw message to prefix and message
+	// depending on the prefix, decide whether the message is from fileIO or urlLoader
 	var prefix = rawMsg[0];
 	var msg = rawMsg.slice(1);
 
