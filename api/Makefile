@@ -20,6 +20,7 @@ PROJECTS := \
   socket \
   url_loader \
   websocket \
+	fileio_url_loader2
 
 
 HTTPD_PY := python ../../tools/httpd.py
