@@ -121,11 +121,14 @@ class FileIoUrlLoaderInstance : public pp::Instance {
   ///
   /// @param[in] var_message The message posted by the browser.
   virtual void HandleMessage(const pp::Var& var_message) {
-    if (!var_message.is_array() && !var_message.is_string())
+    if (!var_message.is_array())
       return;
+
+		pp::VarArray messageArray(var_message);
+		std::string prefix = messageArray.Get(0).AsString();
 		
-		else if (var_message.is_string()) { ///< message from URL Loader
-			std::string message = var_message.AsString();
+		if (prefix == "URLLOADER") { ///< message from URL Loader
+			std::string message = messageArray.Get(1).AsString();
 			if (message.find(kLoadUrlMethodId) == 0) {
 				// The argument to getUrl is everything after the first ':'.
 				size_t sep_pos = message.find_first_of(kMessageArgumentSeparator);
@@ -146,12 +149,11 @@ class FileIoUrlLoaderInstance : public pp::Instance {
 			}
 		}
 
-		else if (var_message.is_array()) { ///< message from file IO
+		else if (prefix == "FILEIO") { ///< message from file IO
 			// Message should be an array with the following elements:
 			// [command, path, extra args]
-			pp::VarArray message(var_message);
-			std::string command = message.Get(0).AsString();
-			std::string file_name = message.Get(1).AsString();
+			std::string command = messageArray.Get(1).AsString();
+			std::string file_name = messageArray.Get(2).AsString();
 
 			if (file_name.length() == 0 || file_name[0] != '/') {
 				ShowStatusMessage("File name must begin with /");
@@ -164,7 +166,7 @@ class FileIoUrlLoaderInstance : public pp::Instance {
 				file_thread_.message_loop().PostWork(
 						callback_factory_.NewCallback(&FileIoUrlLoaderInstance::Load, file_name));
 			} else if (command == "save") {
-				std::string file_text = message.Get(2).AsString();
+				std::string file_text = messageArray.Get(3).AsString();
 				file_thread_.message_loop().PostWork(callback_factory_.NewCallback(
 							&FileIoUrlLoaderInstance::Save, file_name, file_text));
 			} else if (command == "delete") {
@@ -179,7 +181,7 @@ class FileIoUrlLoaderInstance : public pp::Instance {
 				file_thread_.message_loop().PostWork(
 						callback_factory_.NewCallback(&FileIoUrlLoaderInstance::MakeDir, dir_name));
 			} else if (command == "rename") {
-				const std::string new_name = message.Get(2).AsString();
+				const std::string new_name = messageArray.Get(3).AsString();
 				file_thread_.message_loop().PostWork(callback_factory_.NewCallback(
 							&FileIoUrlLoaderInstance::Rename, file_name, new_name));
 			}

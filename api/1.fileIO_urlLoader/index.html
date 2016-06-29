@@ -88,7 +88,15 @@
     <button>Rename</button>
   </div>
 
- <!--- <input id="button" type="button" value="Get URL"> -->
+	<!--- Get files from local -->
+
+	<input type="file" id="files" name="files[]" multiple />
+	<output id="list"></output>
+
+	<script type="text/javascript" src="uploadFile.js"></script>
+
+	<!--- Get files from local end -->
+
   <pre id="log" style="font-weight: bold"></pre>
   <input id="button" type="button" value="Get URL">
   <!-- The NaCl plugin will be embedded inside the element with id "listener".

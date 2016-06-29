@@ -41,7 +41,7 @@ function attachListeners() {
 }
 
 function loadUrl() {
-  common.naclModule.postMessage('getUrl:url_loader_success.html');
+  common.naclModule.postMessage(['URLLOADER','getUrl:url_loader_success.html']);
 }
 
 function onRadioClicked(e) {
@@ -59,8 +59,8 @@ function onRadioClicked(e) {
 function makeMessage(command, path) {
   // Package a message using a simple protocol containing:
   // [command, <path>, <extra args>...]
-  var msg = [command, path];
-  for (var i = 2; i < arguments.length; ++i) {
+  var msg = ['FILEIO',command, path];
+  for (var i = 3; i < arguments.length; ++i) {
     msg.push(arguments[i]);
   }
   return msg;
