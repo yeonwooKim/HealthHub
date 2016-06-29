@@ -428,8 +428,7 @@ document.addEventListener('DOMContentLoaded', function() {
       var pairs = window.location.search.substr(1).split('&');
       for (var key_ix = 0; key_ix < pairs.length; key_ix++) {
         var keyValue = pairs[key_ix].split('=');
-        searchVars[unescape(keyValue[0])] =
-            keyValue.length > 1 ? unescape(keyValue[1]) : '';
+        searchVars[unescape(keyValue[0])] = keyValue.length > 1 ? unescape(keyValue[1]) : '';
       }
     }
 
@@ -449,7 +448,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       var tc = toolchains.indexOf(searchVars.tc) !== -1 ?
-          searchVars.tc : toolchains[0];
+        searchVars.tc : toolchains[0];
 
       // If the config value is included in the search vars, use that.
       // Otherwise default to Release if it is valid, or the first value if
@@ -468,7 +467,7 @@ document.addEventListener('DOMContentLoaded', function() {
       isRelease = path.toLowerCase().indexOf('release') != -1;
 
       loadFunction(body.dataset.name, tc, path, body.dataset.width,
-                   body.dataset.height, attrs);
+          body.dataset.height, attrs);
     }
   }
 });

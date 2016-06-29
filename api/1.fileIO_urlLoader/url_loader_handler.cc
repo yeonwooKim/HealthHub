@@ -23,22 +23,22 @@
 #endif
 
 URLLoaderHandler* URLLoaderHandler::Create(pp::Instance* instance,
-                                           const std::string& url) {
+    const std::string& url) {
   return new URLLoaderHandler(instance, url);
 }
 
 URLLoaderHandler::URLLoaderHandler(pp::Instance* instance,
-                                   const std::string& url)
-    : instance_(instance),
-      url_(url),
-      url_request_(instance),
-      url_loader_(instance),
-      buffer_(new char[READ_BUFFER_SIZE]),
-      cc_factory_(this) {
-  url_request_.SetURL(url);
-  url_request_.SetMethod("GET");
-  url_request_.SetRecordDownloadProgress(true);
-}
+    const std::string& url)
+: instance_(instance),
+  url_(url),
+  url_request_(instance),
+  url_loader_(instance),
+  buffer_(new char[READ_BUFFER_SIZE]),
+  cc_factory_(this) {
+    url_request_.SetURL(url);
+    url_request_.SetMethod("GET");
+    url_request_.SetRecordDownloadProgress(true);
+  }
 
 URLLoaderHandler::~URLLoaderHandler() {
   delete[] buffer_;
@@ -47,7 +47,7 @@ URLLoaderHandler::~URLLoaderHandler() {
 
 void URLLoaderHandler::Start() {
   pp::CompletionCallback cc =
-      cc_factory_.NewCallback(&URLLoaderHandler::OnOpen);
+    cc_factory_.NewCallback(&URLLoaderHandler::OnOpen);
   url_loader_.Open(url_request_, cc);
 }
 
@@ -69,7 +69,7 @@ void URLLoaderHandler::OnOpen(int32_t result) {
   int64_t bytes_received = 0;
   int64_t total_bytes_to_be_received = 0;
   if (url_loader_.GetDownloadProgress(&bytes_received,
-                                      &total_bytes_to_be_received)) {
+        &total_bytes_to_be_received)) {
     if (total_bytes_to_be_received > 0) {
       url_response_body_.reserve(total_bytes_to_be_received);
     }
@@ -120,7 +120,7 @@ void URLLoaderHandler::ReadBody() {
   // However, in the case of a synchronous return, we need to be sure to run
   // the callback we created since the loader won't do anything with it.
   pp::CompletionCallback cc =
-      cc_factory_.NewOptionalCallback(&URLLoaderHandler::OnRead);
+    cc_factory_.NewOptionalCallback(&URLLoaderHandler::OnRead);
   int32_t result = PP_OK;
   do {
     result = url_loader_.ReadResponseBody(buffer_, READ_BUFFER_SIZE, cc);
@@ -144,27 +144,27 @@ void URLLoaderHandler::ReadBody() {
 }
 
 void URLLoaderHandler::ReportResultAndDie(const std::string& fname,
-                                          const std::string& text,
-                                          bool success) {
+    const std::string& text,
+    bool success) {
   ReportResult(fname, text, success);
   delete this;
 }
 
 void URLLoaderHandler::ReportResult(const std::string& fname,
-                                    const std::string& text,
-                                    bool success) {
+    const std::string& text,
+    bool success) {
   if (success)
     printf("URLLoaderHandler::ReportResult(Ok).\n");
   else
     printf("URLLoaderHandler::ReportResult(Err). %s\n", text.c_str());
   fflush(stdout);
   if (instance_) {
-		// URLLOADER prefix attached to the first index of VarArray
-		// to differentiate message for fileIO and for urlLoader.
-		pp::VarArray message;
-		message.Set(0, "URLLOADER");
+    // URLLOADER prefix attached to the first index of VarArray
+    // to differentiate message for fileIO and for urlLoader.
+    pp::VarArray message;
+    message.Set(0, "URLLOADER");
     pp::Var var_result(fname + "\n" + text);
-		message.Set(1, var_result);
+    message.Set(1, var_result);
     instance_->PostMessage(message);
   }
 }
