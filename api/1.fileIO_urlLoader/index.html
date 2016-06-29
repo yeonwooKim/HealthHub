@@ -89,16 +89,18 @@
   </div>
 
 	<!--- Get files from local -->
-
+	<div>
 	<input type="file" id="files" name="files[]" multiple />
-	<output id="list"></output>
-
+	<output id="filelist"></output>
 	<script type="text/javascript" src="uploadFile.js"></script>
+	</div>
 
-	<!--- Get files from local end -->
+	<!--- Get image from url -->
+	<div>
+  <input id="button" type="button" value="Get URL">
+	</div>
 
   <pre id="log" style="font-weight: bold"></pre>
-  <input id="button" type="button" value="Get URL">
   <!-- The NaCl plugin will be embedded inside the element with id "listener".
       See common.js.-->
   <div id="listener"></div>

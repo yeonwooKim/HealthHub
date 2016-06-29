@@ -125,9 +125,9 @@ class FileIoUrlLoaderInstance : public pp::Instance {
       return;
 
 		pp::VarArray messageArray(var_message);
-		std::string prefix = messageArray.Get(0).AsString();
+		pp::Var prefix = messageArray.Get(0);
 		
-		if (prefix == "URLLOADER") { ///< message from URL Loader
+		if (prefix.AsString() == "URLLOADER") { ///< message from URL Loader
 			std::string message = messageArray.Get(1).AsString();
 			if (message.find(kLoadUrlMethodId) == 0) {
 				// The argument to getUrl is everything after the first ':'.
@@ -149,7 +149,7 @@ class FileIoUrlLoaderInstance : public pp::Instance {
 			}
 		}
 
-		else if (prefix == "FILEIO") { ///< message from file IO
+		else if (prefix.AsString() == "FILEIO") { ///< message from file IO
 			// Message should be an array with the following elements:
 			// [command, path, extra args]
 			std::string command = messageArray.Get(1).AsString();
@@ -185,6 +185,9 @@ class FileIoUrlLoaderInstance : public pp::Instance {
 				file_thread_.message_loop().PostWork(callback_factory_.NewCallback(
 							&FileIoUrlLoaderInstance::Rename, file_name, new_name));
 			}
+		}
+		else {
+			//TODO paint picture with received data!			
 		}
   }
 
