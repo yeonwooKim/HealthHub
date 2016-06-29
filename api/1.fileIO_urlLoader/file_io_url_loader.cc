@@ -143,6 +143,7 @@ class FileIoUrlLoaderInstance : public pp::Instance {
               // Starts asynchronous download. When download is finished or when an
               // error occurs, |handler| posts the results back to the browser
               // vis PostMessage and self-destroys.
+
               handler->Start();
             }
           }
@@ -304,9 +305,11 @@ class FileIoUrlLoaderInstance : public pp::Instance {
       std::string string_data(data.begin(), data.end());
       PostArrayMessage("DISP", string_data);
       ShowStatusMessage("Load success");
+      ShowStatusMessage(string_data);
     }
 
-    void Delete(int32_t /* result */, const std::string& file_name) {
+    /*
+    void Delete(int32_t, const std::string& file_name) {
       if (!file_system_ready_) {
         ShowErrorMessage("File system is not open", PP_ERROR_FAILED);
         return;
@@ -324,7 +327,7 @@ class FileIoUrlLoaderInstance : public pp::Instance {
       ShowStatusMessage("Delete success");
     }
 
-    void List(int32_t /* result */, const std::string& dir_name) {
+    void List(int32_t, const std::string& dir_name) {
       if (!file_system_ready_) {
         ShowErrorMessage("File system is not open", PP_ERROR_FAILED);
         return;
@@ -339,7 +342,7 @@ class FileIoUrlLoaderInstance : public pp::Instance {
 
     void ListCallback(int32_t result,
         const std::vector<pp::DirectoryEntry>& entries,
-        pp::FileRef /* unused_ref */) {
+        pp::FileRef ) {
       if (result != PP_OK) {
         ShowErrorMessage("List failed", result);
         return;
@@ -356,7 +359,7 @@ class FileIoUrlLoaderInstance : public pp::Instance {
       ShowStatusMessage("List success");
     }
 
-    void MakeDir(int32_t /* result */, const std::string& dir_name) {
+    void MakeDir(int32_t, const std::string& dir_name) {
       if (!file_system_ready_) {
         ShowErrorMessage("File system is not open", PP_ERROR_FAILED);
         return;
@@ -372,7 +375,7 @@ class FileIoUrlLoaderInstance : public pp::Instance {
       ShowStatusMessage("Make directory success");
     }
 
-    void Rename(int32_t /* result */,
+    void Rename(int32_t,
         const std::string& old_name,
         const std::string& new_name) {
       if (!file_system_ready_) {
@@ -390,6 +393,7 @@ class FileIoUrlLoaderInstance : public pp::Instance {
       }
       ShowStatusMessage("Rename success");
     }
+    */
 
     /// Encapsulates our simple javascript communication protocol
     void ShowErrorMessage(const std::string& message, int32_t result) {

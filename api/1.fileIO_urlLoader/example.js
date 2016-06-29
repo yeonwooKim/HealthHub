@@ -30,7 +30,7 @@ function attachListeners() {
 }
 
 function loadUrl() {
-  common.naclModule.postMessage(['URLLOADER','getUrl:url_loader_success.html']);
+  common.naclModule.postMessage(['URLLOADER','getUrl:hello.txt']);
 }
 
 function makeMessage(command, path) {
@@ -144,14 +144,17 @@ function handleMessage(message_event) {
     // Find the first line break.  This separates the URL data from the
     // result text.  Note that the result text can contain any number of
     // '\n' characters, so split() won't work here.
-    var url = msg;
+    var url = msg[0];
     var result = '';
-    var eolPos = message_event.data.indexOf('\n');
+    var eolPos = msg[0].indexOf('\n');
     if (eolPos != -1) {
-      url = message_event.data.substring(0, eolPos);
-      if (eolPos < message_event.data.length - 1) {
-        result = message_event.data.substring(eolPos + 1);
+      url = msg[0].substring(0, eolPos);
+      if (eolPos < msg[0].length - 1) {
+        result = msg[0].substring(eolPos + 1);
       }
+      common.naclModule.postMessage(['FILEIO', 'save', '/' + url, result]);
+      common.logMessage(url);
+      //common.logMessage(result);
     }
   }
 }
