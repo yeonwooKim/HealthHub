@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 function moduleDidLoad() {
-  common.hideModule();
+  //common.hideModule();
 }
 
 // Called by the common.js module.
