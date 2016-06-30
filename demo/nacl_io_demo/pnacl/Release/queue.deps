@@ -1,12 +1,12 @@
 # Updated by fix_deps.py
 pnacl/Release/queue.o: queue.c queue.h \
-  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_var.h \
-  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_bool.h \
-  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_macros.h \
-  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_stdint.h
+  /Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/ppapi/c/pp_var.h \
+  /Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/ppapi/c/pp_bool.h \
+  /Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/ppapi/c/pp_macros.h \
+  /Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/ppapi/c/pp_stdint.h
 queue.c:
 queue.h:
-/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_var.h:
-/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_bool.h:
-/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_macros.h:
-/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_stdint.h:
+/Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/ppapi/c/pp_var.h:
+/Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/ppapi/c/pp_bool.h:
+/Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/ppapi/c/pp_macros.h:
+/Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/ppapi/c/pp_stdint.h:

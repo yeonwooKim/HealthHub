@@ -1,42 +1,42 @@
 # Updated by fix_deps.py
 pnacl/Release/handlers.o: handlers.c handlers.h \
-  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_var.h \
-  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_bool.h \
-  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_macros.h \
-  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_stdint.h \
-  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/pnacl/arpa/inet.h \
-  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/pnacl/netdb.h \
-  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/pnacl/netinet/in.h \
-  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/pnacl/netinet6/in6.h \
-  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/pnacl/sys/socket.h \
-  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/nacl_io/osdirent.h \
-  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/nacl_io/osinttypes.h \
+  /Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/ppapi/c/pp_var.h \
+  /Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/ppapi/c/pp_bool.h \
+  /Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/ppapi/c/pp_macros.h \
+  /Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/ppapi/c/pp_stdint.h \
+  /Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/pnacl/arpa/inet.h \
+  /Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/pnacl/netdb.h \
+  /Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/pnacl/netinet/in.h \
+  /Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/pnacl/netinet6/in6.h \
+  /Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/pnacl/sys/socket.h \
+  /Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/nacl_io/osdirent.h \
+  /Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/nacl_io/osinttypes.h \
   nacl_io_demo.h \
-  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_instance.h \
-  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb_var.h \
-  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_module.h \
-  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_resource.h \
-  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb_var_array.h \
-  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb_var_dictionary.h \
-  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/sdk_util/macros.h
+  /Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/ppapi/c/pp_instance.h \
+  /Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/ppapi/c/ppb_var.h \
+  /Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/ppapi/c/pp_module.h \
+  /Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/ppapi/c/pp_resource.h \
+  /Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/ppapi/c/ppb_var_array.h \
+  /Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/ppapi/c/ppb_var_dictionary.h \
+  /Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/sdk_util/macros.h
 handlers.c:
 handlers.h:
-/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_var.h:
-/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_bool.h:
-/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_macros.h:
-/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_stdint.h:
-/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/pnacl/arpa/inet.h:
-/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/pnacl/netdb.h:
-/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/pnacl/netinet/in.h:
-/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/pnacl/netinet6/in6.h:
-/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/pnacl/sys/socket.h:
-/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/nacl_io/osdirent.h:
-/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/nacl_io/osinttypes.h:
+/Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/ppapi/c/pp_var.h:
+/Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/ppapi/c/pp_bool.h:
+/Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/ppapi/c/pp_macros.h:
+/Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/ppapi/c/pp_stdint.h:
+/Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/pnacl/arpa/inet.h:
+/Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/pnacl/netdb.h:
+/Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/pnacl/netinet/in.h:
+/Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/pnacl/netinet6/in6.h:
+/Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/pnacl/sys/socket.h:
+/Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/nacl_io/osdirent.h:
+/Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/nacl_io/osinttypes.h:
 nacl_io_demo.h:
-/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_instance.h:
-/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb_var.h:
-/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_module.h:
-/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_resource.h:
-/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb_var_array.h:
-/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb_var_dictionary.h:
-/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/sdk_util/macros.h:
+/Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/ppapi/c/pp_instance.h:
+/Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/ppapi/c/ppb_var.h:
+/Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/ppapi/c/pp_module.h:
+/Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/ppapi/c/pp_resource.h:
+/Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/ppapi/c/ppb_var_array.h:
+/Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/ppapi/c/ppb_var_dictionary.h:
+/Users/yeon-ugim/Downloads/nacl_sdk/pepper_49/include/sdk_util/macros.h:

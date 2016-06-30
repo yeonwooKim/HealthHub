@@ -22,14 +22,6 @@
 
 namespace {
 
-static const int kMouseRadius = 20;
-
-uint8_t RandUint8(uint8_t min, uint8_t max) {
-  uint64_t r = rand();
-  uint8_t result = static_cast<uint8_t>(r * (max - min + 1) / RAND_MAX) + min;
-  return result;
-}
-
 uint32_t MakeColor(uint8_t r, uint8_t g, uint8_t b) {
   uint8_t a = 255;
   PP_ImageDataFormat format = pp::ImageData::GetNativeImageDataFormat();
@@ -58,7 +50,6 @@ class Graphics2DInstance : public pp::Instance {
 
     unsigned int seed = 1;
     srand(seed);
-    CreatePalette();
     return true;
   }
 
@@ -101,18 +92,6 @@ class Graphics2DInstance : public pp::Instance {
   }
 
  private:
-  void CreatePalette() {
-    for (int i = 0; i < 64; ++i) {
-      // Black -> Red
-      palette_[i] = MakeColor(i * 2, 0, 0);
-      palette_[i + 64] = MakeColor(128 + i * 2, 0, 0);
-      // Red -> Yellow
-      palette_[i + 128] = MakeColor(255, i * 4, 0);
-      // Yellow -> White
-      palette_[i + 192] = MakeColor(255, 255, i * 4);
-    }
-  }
-
   bool CreateContext(const pp::Size& new_size) {
     const bool kIsAlwaysOpaque = true;
     context_ = pp::Graphics2D(this, new_size, kIsAlwaysOpaque);
@@ -126,80 +105,23 @@ class Graphics2DInstance : public pp::Instance {
     }
 
     // Allocate a buffer of palette entries of the same size as the new context.
-    buffer_ = new uint8_t[new_size.width() * new_size.height()];
+    buffer_ = new uint8_t[new_size.width() * new_size.height() * 3]; // 3 for RGB
     size_ = new_size;
 
     return true;
   }
 
   void Update() {
-    // Old-school fire technique cribbed from
-    // http://ionicsolutions.net/2011/12/30/demo-fire-effect/
-    UpdateCoals();
-    DrawMouse();
-    UpdateFlames();
-  }
-
-  void UpdateCoals() {
     int width = size_.width();
     int height = size_.height();
-    size_t span = 0;
 
     // Draw two rows of random values at the bottom.
-    for (int y = height - 2; y < height; ++y) {
-      size_t offset = y * width;
+    for (int y = 0; y < height; ++y) {
+      size_t offset = y * width * 3;
       for (int x = 0; x < width; ++x) {
-        // On a random chance, draw some longer strips of brighter colors.
-        if (span || RandUint8(1, 4) == 1) {
-          if (!span)
-            span = RandUint8(10, 20);
-          buffer_[offset + x] = RandUint8(128, 255);
-          span--;
-        } else {
-          buffer_[offset + x] = RandUint8(32, 96);
-        }
-      }
-    }
-  }
-
-  void UpdateFlames() {
-    int width = size_.width();
-    int height = size_.height();
-    for (int y = 1; y < height - 1; ++y) {
-      size_t offset = y * width;
-      for (int x = 1; x < width - 1; ++x) {
-        int sum = 0;
-        sum += buffer_[offset - width + x - 1];
-        sum += buffer_[offset - width + x + 1];
-        sum += buffer_[offset + x - 1];
-        sum += buffer_[offset + x + 1];
-        sum += buffer_[offset + width + x - 1];
-        sum += buffer_[offset + width + x];
-        sum += buffer_[offset + width + x + 1];
-        buffer_[offset - width + x] = sum / 7;
-      }
-    }
-  }
-
-  void DrawMouse() {
-    if (!mouse_down_)
-      return;
-
-    int width = size_.width();
-    int height = size_.height();
-
-    // Draw a circle at the mouse position.
-    int radius = kMouseRadius * device_scale_;
-    int cx = mouse_.x();
-    int cy = mouse_.y();
-    int minx = cx - radius <= 0 ? 1 : cx - radius;
-    int maxx = cx + radius >= width ? width - 1 : cx + radius;
-    int miny = cy - radius <= 0 ? 1 : cy - radius;
-    int maxy = cy + radius >= height ? height - 1 : cy + radius;
-    for (int y = miny; y < maxy; ++y) {
-      for (int x = minx; x < maxx; ++x) {
-        if ((x - cx) * (x - cx) + (y - cy) * (y - cy) < radius * radius)
-          buffer_[y * width + x] = RandUint8(192, 255);
+        buffer_[offset + x * 3] = y * 255 / height;       // R value for (x, y)
+        buffer_[offset + x * 3 + 1] = x * 255 / height;   // G value for (x, y)
+        buffer_[offset + x * 3 + 2] = 0;   // B value for (x, y)
       }
     }
   }
@@ -217,8 +139,8 @@ class Graphics2DInstance : public pp::Instance {
     uint32_t num_pixels = size_.width() * size_.height();
     size_t offset = 0;
     for (uint32_t i = 0; i < num_pixels; ++i) {
-      data[offset] = palette_[buffer_[offset]];
-      offset++;
+      data[offset] = MakeColor (buffer_[offset * 3], buffer_[offset * 3 + 1], buffer_[offset * 3 + 2]);
+      offset ++;
     }
 
     // Using Graphics2D::ReplaceContents is the fastest way to update the
@@ -267,7 +189,6 @@ class Graphics2DInstance : public pp::Instance {
   pp::Point mouse_;
   bool mouse_down_;
   uint8_t* buffer_;
-  uint32_t palette_[256];
   float device_scale_;
 };
 
