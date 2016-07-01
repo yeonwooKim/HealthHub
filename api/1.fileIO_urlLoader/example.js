@@ -29,7 +29,7 @@ function attachListeners() {
 }
 
 function loadUrl() {
-  common.naclModule.postMessage(['URLLOADER','getUrl:black.bmp']);
+  common.naclModule.postMessage(['URLLOADER','getUrl:3.bmp']);
 }
 
 function makeMessage(command, path) {

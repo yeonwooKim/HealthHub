@@ -82,7 +82,11 @@ class FileIoUrlLoaderInstance : public pp::Instance {
       file_system_ready_(false),
       file_thread_(this) {}
 
-    virtual ~FileIoUrlLoaderInstance() { file_thread_.Join(); }
+    virtual ~FileIoUrlLoaderInstance() {
+      delete[] array_;
+      delete[] buffer_;
+      file_thread_.Join(); 
+    }
 
     virtual bool Init(uint32_t /*argc*/,
         const char * /*argn*/ [],
@@ -169,9 +173,18 @@ class FileIoUrlLoaderInstance : public pp::Instance {
           file_thread_.message_loop().PostWork(
               callback_factory_.NewCallback(&FileIoUrlLoaderInstance::Load, file_name));
         } else if (command == "save") {
-          std::string file_text = messageArray.Get(3).AsString();
+          pp::Var file_data = messageArray.Get(3);
+          if (!file_data.is_array())
+            return;
+          pp::VarArray bytearray(file_data);
+          int l = bytearray.GetLength();
+          std::stringstream ss;
+          for (int i = 0 ; i < l ; i ++) {
+            int v = bytearray.Get(i).AsInt();
+            ss << (char) v;
+          }
           file_thread_.message_loop().PostWork(callback_factory_.NewCallback(
-                &FileIoUrlLoaderInstance::Save, file_name, file_text));
+                &FileIoUrlLoaderInstance::Save, file_name, ss.str()));
         } 
         /*else if (command == "delete") {
           file_thread_.message_loop().PostWork(
@@ -191,8 +204,11 @@ class FileIoUrlLoaderInstance : public pp::Instance {
           }*/
       }
       else {
-        //TODO paint picture with received data!
         uint32_t len = messageArray.GetLength();
+        if (array_) {
+          delete[] array_;
+          array_ = NULL;
+        }
         array_ = new uint32_t[len];
         for (uint32_t i = 0; i < len; i++) {
           array_[i] = messageArray.Get(i).AsInt();
@@ -201,15 +217,11 @@ class FileIoUrlLoaderInstance : public pp::Instance {
         UpdateWithArray (array_);
         Paint();
         context_.Flush(callback_factory_graphics_.NewCallback(&FileIoUrlLoaderInstance::Nop));
-
-        //if (flush_context_.is_null())
-        //MainLoop(0);
       }
     }
 
   
   private:
-
     bool CreateContext(const pp::Size& new_size) {
       const bool kIsAlwaysOpaque = true;
       context_ = pp::Graphics2D(this, new_size, kIsAlwaysOpaque);
@@ -223,6 +235,10 @@ class FileIoUrlLoaderInstance : public pp::Instance {
       }
 
       // Allocate a buffer of palette entries of the same size as the new context.
+      if (buffer_) {
+        delete[] buffer_;
+        buffer_ = NULL;
+      }
       buffer_ = new uint8_t[new_size.width() * new_size.height() * 3]; // 3 for RGB
       size_ = new_size;
 
@@ -246,18 +262,15 @@ class FileIoUrlLoaderInstance : public pp::Instance {
       pp::Size new_size = pp::Size (width, height);
       CreateContext (new_size);
       
-      StringVector sv;
       std::stringstream ss;
+      StringVector sv;
       ss << width;
-      //ShowStatusMessage (ss.str());
       sv.push_back(ss.str());
       ss.str("");
       ss << height;
-      //ShowStatusMessage (ss.str());
       sv.push_back(ss.str());
       PostArrayMessage("GRAPHICS", "WH", sv);
       
-
       for (int y = 0; y < height; y++) {
         uint32_t offset = (height - 1 - y) * width * 3; // Bottom up
         for (int x = 0; x < width; x++) {
@@ -309,7 +322,6 @@ class FileIoUrlLoaderInstance : public pp::Instance {
       context_.PaintImageData (const_data, top_left_, src_rect_); 
 
       //context_.ReplaceContents(&image_data);
-
     }
 
     void Nop (int32_t) {}
@@ -407,6 +419,7 @@ class FileIoUrlLoaderInstance : public pp::Instance {
           }
         } while (bytes_written < static_cast<int64_t>(file_contents.length()));
       }
+
       // All bytes have been written, flush the write buffer to complete
       int32_t flush_result = file.Flush(pp::BlockUntilComplete());
       if (flush_result != PP_OK) {
@@ -463,11 +476,21 @@ class FileIoUrlLoaderInstance : public pp::Instance {
           return;
         }
       }
+      int len = data.size();
+      if (array_) {
+        delete[] array_;
+        array_ = NULL;
+      }
+      array_ = new uint32_t[len];
+      for (int i = 0 ; i < len ; i ++) {
+        int c = (unsigned char) data[i];
+        array_[i] = (uint32_t) c;
+      }
       // Done reading, send content to the user interface
-      std::string string_data(data.begin(), data.end());
-      PostArrayMessage("FILEIO", "DISP", string_data);
       ShowStatusMessage("Load success");
-      ShowStatusMessage(string_data);
+      UpdateWithArray (array_);
+      Paint();
+      context_.Flush(callback_factory_graphics_.NewCallback(&FileIoUrlLoaderInstance::Nop));
     }
 
     /*

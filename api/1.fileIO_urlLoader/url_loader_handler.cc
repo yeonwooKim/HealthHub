@@ -166,7 +166,13 @@ void URLLoaderHandler::ReportResult(const std::string& fname,
     message.Set(0, "FILEIO");
     message.Set(1, "save");
     message.Set(2, '/' + fname);
-    message.Set(3, text);
+    pp::VarArray bytearray;
+    for (int i = 0 ; i < text.length() ; i ++) {
+      int el = text[i];
+      pp::Var v(el);
+      bytearray.Set(i, v);
+    }
+    message.Set(3, bytearray);
     instance_->HandleMessage(message);
   }
 }
