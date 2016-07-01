@@ -115,6 +115,98 @@ class FileIoUrlLoaderInstance : public pp::Instance {
         MainLoop(0);
       */
     }
+
+    /// Handler for messages coming in from the browser via postMessage().  The
+    /// @a var_message can contain anything: a JSON string; a string that encodes
+    /// method names and arguments; etc.
+    ///
+    /// Here we use messages to communicate with the user interface
+    ///
+    /// @param[in] var_message The message posted by the browser.
+    virtual void HandleMessage(const pp::Var& var_message) {
+      if (!var_message.is_array())
+        return;
+
+      pp::VarArray messageArray(var_message);
+      pp::Var prefix = messageArray.Get(0);
+
+      if (prefix.AsString() == "URLLOADER") { ///< message from URL Loader
+        std::string message = messageArray.Get(1).AsString();
+        if (message.find(kLoadUrlMethodId) == 0) {
+          // The argument to getUrl is everything after the first ':'.
+          size_t sep_pos = message.find_first_of(kMessageArgumentSeparator);
+          if (sep_pos != std::string::npos) {
+            std::string url = message.substr(sep_pos + 1);
+            printf("URLLoaderInstance::HandleMessage('%s', '%s')\n",
+                message.c_str(),
+                url.c_str());
+            fflush(stdout);
+            URLLoaderHandler* handler = URLLoaderHandler::Create(this, url);
+            if (handler != NULL) {
+              // Starts asynchronous download. When download is finished or when an
+              // error occurs, |handler| posts the results back to the browser
+              // vis PostMessage and self-destroys.
+
+              handler->Start();
+            }
+          }
+        }
+      }
+      else if (prefix.AsString() == "FILEIO") { ///< message from file IO
+        // Message should be an array with the following elements:
+        // [command, path, extra args]
+        std::string command = messageArray.Get(1).AsString();
+        std::string file_name = messageArray.Get(2).AsString();
+
+        if (file_name.length() == 0 || file_name[0] != '/') {
+          ShowStatusMessage("File name must begin with /");
+          return;
+        }
+
+        printf("command: %s file_name: %s\n", command.c_str(), file_name.c_str());
+
+        if (command == "load") {
+          file_thread_.message_loop().PostWork(
+              callback_factory_.NewCallback(&FileIoUrlLoaderInstance::Load, file_name));
+        } else if (command == "save") {
+          std::string file_text = messageArray.Get(3).AsString();
+          file_thread_.message_loop().PostWork(callback_factory_.NewCallback(
+                &FileIoUrlLoaderInstance::Save, file_name, file_text));
+        } 
+        /*else if (command == "delete") {
+          file_thread_.message_loop().PostWork(
+          callback_factory_.NewCallback(&FileIoUrlLoaderInstance::Delete, file_name));
+          } else if (command == "list") {
+          const std::string& dir_name = file_name;
+          file_thread_.message_loop().PostWork(
+          callback_factory_.NewCallback(&FileIoUrlLoaderInstance::List, dir_name));
+          } else if (command == "makedir") {
+          const std::string& dir_name = file_name;
+          file_thread_.message_loop().PostWork(
+          callback_factory_.NewCallback(&FileIoUrlLoaderInstance::MakeDir, dir_name));
+          } else if (command == "rename") {
+          const std::string new_name = messageArray.Get(3).AsString();
+          file_thread_.message_loop().PostWork(callback_factory_.NewCallback(
+          &FileIoUrlLoaderInstance::Rename, file_name, new_name));
+          }*/
+      }
+      else {
+        //TODO paint picture with received data!
+        uint32_t len = messageArray.GetLength();
+        array_ = new uint32_t[len];
+        for (uint32_t i = 0; i < len; i++) {
+          array_[i] = messageArray.Get(i).AsInt();
+        }
+        
+        UpdateWithArray (array_);
+        Paint();
+        context_.Flush(callback_factory_graphics_.NewCallback(&FileIoUrlLoaderInstance::Nop));
+
+        //if (flush_context_.is_null())
+        //MainLoop(0);
+      }
+    }
+
   
   private:
 
@@ -260,97 +352,6 @@ class FileIoUrlLoaderInstance : public pp::Instance {
       StringVector sv;
       sv.push_back(s);
       PostArrayMessage(prefix, command, sv);
-    }
-
-    /// Handler for messages coming in from the browser via postMessage().  The
-    /// @a var_message can contain anything: a JSON string; a string that encodes
-    /// method names and arguments; etc.
-    ///
-    /// Here we use messages to communicate with the user interface
-    ///
-    /// @param[in] var_message The message posted by the browser.
-    virtual void HandleMessage(const pp::Var& var_message) {
-      if (!var_message.is_array())
-        return;
-
-      pp::VarArray messageArray(var_message);
-      pp::Var prefix = messageArray.Get(0);
-
-      if (prefix.AsString() == "URLLOADER") { ///< message from URL Loader
-        std::string message = messageArray.Get(1).AsString();
-        if (message.find(kLoadUrlMethodId) == 0) {
-          // The argument to getUrl is everything after the first ':'.
-          size_t sep_pos = message.find_first_of(kMessageArgumentSeparator);
-          if (sep_pos != std::string::npos) {
-            std::string url = message.substr(sep_pos + 1);
-            printf("URLLoaderInstance::HandleMessage('%s', '%s')\n",
-                message.c_str(),
-                url.c_str());
-            fflush(stdout);
-            URLLoaderHandler* handler = URLLoaderHandler::Create(this, url);
-            if (handler != NULL) {
-              // Starts asynchronous download. When download is finished or when an
-              // error occurs, |handler| posts the results back to the browser
-              // vis PostMessage and self-destroys.
-
-              handler->Start();
-            }
-          }
-        }
-      }
-      else if (prefix.AsString() == "FILEIO") { ///< message from file IO
-        // Message should be an array with the following elements:
-        // [command, path, extra args]
-        std::string command = messageArray.Get(1).AsString();
-        std::string file_name = messageArray.Get(2).AsString();
-
-        if (file_name.length() == 0 || file_name[0] != '/') {
-          ShowStatusMessage("File name must begin with /");
-          return;
-        }
-
-        printf("command: %s file_name: %s\n", command.c_str(), file_name.c_str());
-
-        if (command == "load") {
-          file_thread_.message_loop().PostWork(
-              callback_factory_.NewCallback(&FileIoUrlLoaderInstance::Load, file_name));
-        } else if (command == "save") {
-          std::string file_text = messageArray.Get(3).AsString();
-          file_thread_.message_loop().PostWork(callback_factory_.NewCallback(
-                &FileIoUrlLoaderInstance::Save, file_name, file_text));
-        } 
-        /*else if (command == "delete") {
-          file_thread_.message_loop().PostWork(
-          callback_factory_.NewCallback(&FileIoUrlLoaderInstance::Delete, file_name));
-          } else if (command == "list") {
-          const std::string& dir_name = file_name;
-          file_thread_.message_loop().PostWork(
-          callback_factory_.NewCallback(&FileIoUrlLoaderInstance::List, dir_name));
-          } else if (command == "makedir") {
-          const std::string& dir_name = file_name;
-          file_thread_.message_loop().PostWork(
-          callback_factory_.NewCallback(&FileIoUrlLoaderInstance::MakeDir, dir_name));
-          } else if (command == "rename") {
-          const std::string new_name = messageArray.Get(3).AsString();
-          file_thread_.message_loop().PostWork(callback_factory_.NewCallback(
-          &FileIoUrlLoaderInstance::Rename, file_name, new_name));
-          }*/
-      }
-      else {
-        //TODO paint picture with received data!
-        uint32_t len = messageArray.GetLength();
-        array_ = new uint32_t[len];
-        for (uint32_t i = 0; i < len; i++) {
-          array_[i] = messageArray.Get(i).AsInt();
-        }
-        
-        UpdateWithArray (array_);
-        Paint();
-        context_.Flush(callback_factory_graphics_.NewCallback(&FileIoUrlLoaderInstance::Nop));
-
-        //if (flush_context_.is_null())
-        //MainLoop(0);
-      }
     }
 
     void OpenFileSystem(int32_t /* result */) {

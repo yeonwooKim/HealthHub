@@ -163,9 +163,10 @@ void URLLoaderHandler::ReportResult(const std::string& fname,
     // URLLOADER prefix attached to the first index of VarArray
     // to differentiate message for fileIO and for urlLoader.
     pp::VarArray message;
-    message.Set(0, "URLLOADER");
-    pp::Var var_result(fname + "\n" + text);
-    message.Set(1, var_result);
-    instance_->PostMessage(message);
+    message.Set(0, "FILEIO");
+    message.Set(1, "save");
+    message.Set(2, '/' + fname);
+    message.Set(3, text);
+    instance_->HandleMessage(message);
   }
 }
