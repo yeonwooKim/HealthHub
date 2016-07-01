@@ -35,12 +35,12 @@ class URLLoaderHandler {
     // URLLoaderHandler objects shall be created only on the heap (they
     // self-destroy when all data is in).
     static URLLoaderHandler* Create(pp::Instance* instance_,
-        const std::string& url);
+        const std::string& url, const std::string& fname);
     // Initiates page (URL) download.
     void Start();
 
   private:
-    URLLoaderHandler(pp::Instance* instance_, const std::string& url);
+    URLLoaderHandler(pp::Instance* instance_, const std::string& url, const std::string& fname);
     ~URLLoaderHandler();
 
     // Callback for the pp::URLLoader::Open().
@@ -78,6 +78,7 @@ class URLLoaderHandler {
     pp::URLRequestInfo url_request_;
     pp::URLLoader url_loader_;  // URLLoader provides an API to download URLs.
     char* buffer_;              // Temporary buffer for reads.
+    std::string file_name_;
     std::string url_response_body_;  // Contains accumulated downloaded data.
     pp::CompletionCallbackFactory<URLLoaderHandler> cc_factory_;
 

@@ -136,6 +136,7 @@ class FileIoUrlLoaderInstance : public pp::Instance {
 
       if (prefix.AsString() == "URLLOADER") { ///< message from URL Loader
         std::string message = messageArray.Get(1).AsString();
+        std::string filename = messageArray.Get(2).AsString();
         if (message.find(kLoadUrlMethodId) == 0) {
           // The argument to getUrl is everything after the first ':'.
           size_t sep_pos = message.find_first_of(kMessageArgumentSeparator);
@@ -145,7 +146,7 @@ class FileIoUrlLoaderInstance : public pp::Instance {
                 message.c_str(),
                 url.c_str());
             fflush(stdout);
-            URLLoaderHandler* handler = URLLoaderHandler::Create(this, url);
+            URLLoaderHandler* handler = URLLoaderHandler::Create(this, url, filename);
             if (handler != NULL) {
               // Starts asynchronous download. When download is finished or when an
               // error occurs, |handler| posts the results back to the browser
@@ -183,8 +184,10 @@ class FileIoUrlLoaderInstance : public pp::Instance {
             int v = bytearray.Get(i).AsInt();
             ss << (char) v;
           }
+          std::string& t = file_name;
+          ShowStatusMessage(t);
           file_thread_.message_loop().PostWork(callback_factory_.NewCallback(
-                &FileIoUrlLoaderInstance::Save, file_name, ss.str()));
+                &FileIoUrlLoaderInstance::Save, t, ss.str()));
         } 
         /*else if (command == "delete") {
           file_thread_.message_loop().PostWork(
@@ -193,11 +196,11 @@ class FileIoUrlLoaderInstance : public pp::Instance {
           const std::string& dir_name = file_name;
           file_thread_.message_loop().PostWork(
           callback_factory_.NewCallback(&FileIoUrlLoaderInstance::List, dir_name));
-          } else if (command == "makedir") {
+          }*/ else if (command == "makedir") {
           const std::string& dir_name = file_name;
           file_thread_.message_loop().PostWork(
           callback_factory_.NewCallback(&FileIoUrlLoaderInstance::MakeDir, dir_name));
-          } else if (command == "rename") {
+          }/* else if (command == "rename") {
           const std::string new_name = messageArray.Get(3).AsString();
           file_thread_.message_loop().PostWork(callback_factory_.NewCallback(
           &FileIoUrlLoaderInstance::Rename, file_name, new_name));
@@ -543,6 +546,7 @@ class FileIoUrlLoaderInstance : public pp::Instance {
       PostArrayMessage("FILEIO", "LIST", sv);
       ShowStatusMessage("List success");
     }
+    */
 
     void MakeDir(int32_t, const std::string& dir_name) {
       if (!file_system_ready_) {
@@ -560,6 +564,7 @@ class FileIoUrlLoaderInstance : public pp::Instance {
       ShowStatusMessage("Make directory success");
     }
 
+    /*
     void Rename(int32_t,
         const std::string& old_name,
         const std::string& new_name) {

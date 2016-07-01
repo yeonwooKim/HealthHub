@@ -23,17 +23,20 @@
 #endif
 
 URLLoaderHandler* URLLoaderHandler::Create(pp::Instance* instance,
-    const std::string& url) {
-  return new URLLoaderHandler(instance, url);
+    const std::string& url,
+    const std::string& fname) {
+  return new URLLoaderHandler(instance, url, fname);
 }
 
 URLLoaderHandler::URLLoaderHandler(pp::Instance* instance,
-    const std::string& url)
+    const std::string& url,
+    const std::string& fname)
 : instance_(instance),
   url_(url),
   url_request_(instance),
   url_loader_(instance),
   buffer_(new char[READ_BUFFER_SIZE]),
+  file_name_(fname),
   cc_factory_(this) {
     url_request_.SetURL(url);
     url_request_.SetMethod("GET");
@@ -165,7 +168,7 @@ void URLLoaderHandler::ReportResult(const std::string& fname,
     pp::VarArray message;
     message.Set(0, "FILEIO");
     message.Set(1, "save");
-    message.Set(2, '/' + fname);
+    message.Set(2, file_name_);
     pp::VarArray bytearray;
     for (int i = 0 ; i < text.length() ; i ++) {
       int el = text[i];

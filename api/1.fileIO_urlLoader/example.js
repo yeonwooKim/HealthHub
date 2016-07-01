@@ -25,11 +25,15 @@ function attachListeners() {
   }
 
   addEventListenerToButton('loadFile', loadFile);
-  document.getElementById('button').addEventListener('click', loadUrl);
+  addEventListenerToButton('makeDir', makeDir);
+  addEventListenerToButton('loadURL', loadUrl);
 }
 
 function loadUrl() {
-  common.naclModule.postMessage(['URLLOADER','getUrl:3.bmp']);
+  if (common.naclModule) {
+    var fileName = document.querySelector('#loadURL input').value;
+    common.naclModule.postMessage(['URLLOADER','getUrl:5.bmp', fileName]);
+  }
 }
 
 function makeMessage(command, path) {
@@ -68,14 +72,16 @@ function loadFile() {
    common.naclModule.postMessage(makeMessage('list', dirName));
    }
    }
+*/
 
-   function makeDir() {
-   if (common.naclModule) {
-   var dirName = document.querySelector('#makeDir input').value;
-   common.naclModule.postMessage(makeMessage('makedir', dirName));
-   }
-   }
+function makeDir() {
+  if (common.naclModule) {
+    var dirName = document.querySelector('#makeDir input').value;
+    common.naclModule.postMessage(makeMessage('makedir', dirName));
+  }
+}
 
+/*
    function rename() {
    if (common.naclModule) {
    var oldName = document.querySelector('#renameOld').value;
