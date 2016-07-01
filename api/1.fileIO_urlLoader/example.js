@@ -53,8 +53,8 @@ function saveFile(fileName, fileData) {
 
 function loadFile() {
   if (common.naclModule) {
-    var fileName = document.querySelector('#loadFile input').value;
-    common.naclModule.postMessage(makeMessage('load', fileName));
+    var dirname = document.querySelector('#loadFile input').value;
+    common.naclModule.postMessage(makeMessage('load', dirname));
   }
 }
 

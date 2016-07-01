@@ -74,7 +74,6 @@ class FileIoUrlLoaderInstance : public pp::Instance {
     explicit FileIoUrlLoaderInstance(PP_Instance instance)
       : pp::Instance(instance),
       callback_factory_(this),
-      callback_factory_graphics_(this),
       file_system_(this, PP_FILESYSTEMTYPE_LOCALPERSISTENT),
       buffer_(NULL),
       array_(NULL),
@@ -219,7 +218,7 @@ class FileIoUrlLoaderInstance : public pp::Instance {
         
         UpdateWithArray (array_);
         Paint();
-        context_.Flush(callback_factory_graphics_.NewCallback(&FileIoUrlLoaderInstance::Nop));
+        context_.Flush(callback_factory_.NewCallback(&FileIoUrlLoaderInstance::Nop));
       }
     }
 
@@ -330,10 +329,8 @@ class FileIoUrlLoaderInstance : public pp::Instance {
     void Nop (int32_t) {}
 
     pp::CompletionCallbackFactory<FileIoUrlLoaderInstance> callback_factory_;
-    pp::CompletionCallbackFactory<FileIoUrlLoaderInstance> callback_factory_graphics_;
     pp::FileSystem file_system_;
     pp::Graphics2D context_;
-    pp::Graphics2D flush_context_;
     pp::Size size_;
     uint8_t* buffer_;
     uint32_t* array_;
@@ -438,62 +435,9 @@ class FileIoUrlLoaderInstance : public pp::Instance {
         return;
       }
       pp::FileRef ref(file_system_, file_name.c_str());
-      pp::FileIO file(this);
 
-      int32_t open_result =
-        file.Open(ref, PP_FILEOPENFLAG_READ, pp::BlockUntilComplete());
-      if (open_result == PP_ERROR_FILENOTFOUND) {
-        ShowErrorMessage("File not found", open_result);
-        return;
-      } else if (open_result != PP_OK) {
-        ShowErrorMessage("File open for read failed", open_result);
-        return;
-      }
-      PP_FileInfo info;
-      int32_t query_result = file.Query(&info, pp::BlockUntilComplete());
-      if (query_result != PP_OK) {
-        ShowErrorMessage("File query failed", query_result);
-        return;
-      }
-      // FileIO.Read() can only handle int32 sizes
-      if (info.size > INT32_MAX) {
-        ShowErrorMessage("File too big", PP_ERROR_FILETOOBIG);
-        return;
-      }
-
-      std::vector<char> data(info.size);
-      int64_t offset = 0;
-      int32_t bytes_read = 0;
-      int32_t bytes_to_read = info.size;
-      while (bytes_to_read > 0) {
-        bytes_read = file.Read(offset,
-            &data[offset],
-            data.size() - offset,
-            pp::BlockUntilComplete());
-        if (bytes_read > 0) {
-          offset += bytes_read;
-          bytes_to_read -= bytes_read;
-        } else if (bytes_read < 0) {
-          // If bytes_read < PP_OK then it indicates the error code.
-          ShowErrorMessage("File read failed", bytes_read);
-          return;
-        }
-      }
-      int len = data.size();
-      if (array_) {
-        delete[] array_;
-        array_ = NULL;
-      }
-      array_ = new uint32_t[len];
-      for (int i = 0 ; i < len ; i ++) {
-        int c = (unsigned char) data[i];
-        array_[i] = (uint32_t) c;
-      }
-      // Done reading, send content to the user interface
-      ShowStatusMessage("Load success");
-      UpdateWithArray (array_);
-      Paint();
-      context_.Flush(callback_factory_graphics_.NewCallback(&FileIoUrlLoaderInstance::Nop));
+      ref.ReadDirectoryEntries(callback_factory_.NewCallbackWithOutput(
+            &FileIoUrlLoaderInstance::LoadCallback, ref));
     }
 
     /*
@@ -527,6 +471,76 @@ class FileIoUrlLoaderInstance : public pp::Instance {
       ref.ReadDirectoryEntries(callback_factory_.NewCallbackWithOutput(
             &FileIoUrlLoaderInstance::ListCallback, ref));
     }
+    */
+
+    void LoadCallback(int32_t result, const std::vector<pp::DirectoryEntry>& entries, pp::FileRef) {
+      if (result != PP_OK) {
+        ShowErrorMessage("Load failed", result);
+        return;
+      }
+
+      for (int i = 0 ; i < entries.size() ; i ++) {
+        pp::FileIO file(this);
+        pp::FileRef ref = entries[i].file_ref();
+        int32_t open_result =
+          file.Open(ref, PP_FILEOPENFLAG_READ, pp::BlockUntilComplete());
+        if (open_result == PP_ERROR_FILENOTFOUND) {
+          ShowErrorMessage("File not found", open_result);
+          return;
+        } else if (open_result != PP_OK) {
+          ShowErrorMessage("File open for read failed", open_result);
+          return;
+        }
+        PP_FileInfo info;
+        int32_t query_result = file.Query(&info, pp::BlockUntilComplete());
+        if (query_result != PP_OK) {
+          ShowErrorMessage("File query failed", query_result);
+          return;
+        }
+        // FileIO.Read() can only handle int32 sizes
+        if (info.size > INT32_MAX) {
+          ShowErrorMessage("File too big", PP_ERROR_FILETOOBIG);
+          return;
+        }
+
+        std::vector<char> data(info.size);
+        int64_t offset = 0;
+        int32_t bytes_read = 0;
+        int32_t bytes_to_read = info.size;
+        while (bytes_to_read > 0) {
+          bytes_read = file.Read(offset,
+              &data[offset],
+              data.size() - offset,
+              pp::BlockUntilComplete());
+          if (bytes_read > 0) {
+            offset += bytes_read;
+            bytes_to_read -= bytes_read;
+          } else if (bytes_read < 0) {
+            // If bytes_read < PP_OK then it indicates the error code.
+            ShowErrorMessage("File read failed", bytes_read);
+            return;
+          }
+        }
+        int len = data.size();
+        if (array_) {
+          delete[] array_;
+          array_ = NULL;
+        }
+        array_ = new uint32_t[len];
+        for (int i = 0 ; i < len ; i ++) {
+          int c = (unsigned char) data[i];
+          array_[i] = (uint32_t) c;
+        }
+        // Done reading, send content to the user interface
+        ShowStatusMessage(ref.GetName().AsString());
+        ShowStatusMessage("Load success");
+        UpdateWithArray (array_);
+        Paint();
+        file.Close();
+        context_.Flush(callback_factory_.NewCallback(&FileIoUrlLoaderInstance::Nop));
+      }
+    }
+    /*
 
     void ListCallback(int32_t result,
         const std::vector<pp::DirectoryEntry>& entries,
