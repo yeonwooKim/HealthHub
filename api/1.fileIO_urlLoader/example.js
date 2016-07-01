@@ -3,7 +3,6 @@
 // found in the LICENSE file.
 
 function moduleDidLoad() {
-  common.hideModule();
 }
 
 // Called by the common.js module.
@@ -90,6 +89,7 @@ function loadFile() {
 function handleMessage(message_event) {
   var fromFile = 'FILEIO';
   var fromUrl = 'URLLOADER';
+  var fromGraphics = 'GRAPHICS';
   var rawMsg = message_event.data;
   // Parse the raw message to prefix and message
   // depending on the prefix, decide whether the message is from fileIO or urlLoader
@@ -155,6 +155,18 @@ function handleMessage(message_event) {
       common.naclModule.postMessage(['FILEIO', 'save', '/' + url, result]);
       common.logMessage(url);
       //common.logMessage(result);
+    }
+  }
+
+  else if (prefix == fromGraphics) {
+    var command = msg[0];
+    var args = msg.slice(1);
+   
+    if (command == 'WH') {
+      var width = args[0];
+      var height = args[1];
+      common.naclModule.width = width;
+      common.naclModule.height = height;
     }
   }
 }

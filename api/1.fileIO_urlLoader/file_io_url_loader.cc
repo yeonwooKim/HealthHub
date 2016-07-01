@@ -28,6 +28,10 @@
 #include "ppapi/cpp/url_loader.h"
 #include "url_loader_handler.h"
 
+#include "ppapi/c/ppb_image_data.h"
+#include "ppapi/cpp/graphics_2d.h"
+#include "ppapi/cpp/image_data.h"
+
 #ifndef INT32_MAX
 #define INT32_MAX (0x7FFFFFFF)
 #endif
@@ -45,6 +49,16 @@ namespace {
   typedef std::vector<std::string> StringVector;
   const char* const kLoadUrlMethodId = "getUrl";
   static const char kMessageArgumentSeparator = ':';
+
+  uint32_t MakeColor(uint8_t r, uint8_t g, uint8_t b) {
+    uint8_t a = 255;
+    PP_ImageDataFormat format = pp::ImageData::GetNativeImageDataFormat();
+    if (format == PP_IMAGEDATAFORMAT_BGRA_PREMUL) {
+      return (a << 24) | (r << 16) | (g << 8) | b;
+    } else {
+      return (a << 24) | (b << 16) | (g << 8) | r;
+    }
+  }
 }
 
 /// The Instance class.  One of these exists for each instance of your NaCl
@@ -60,7 +74,11 @@ class FileIoUrlLoaderInstance : public pp::Instance {
     explicit FileIoUrlLoaderInstance(PP_Instance instance)
       : pp::Instance(instance),
       callback_factory_(this),
+      callback_factory_graphics_(this),
       file_system_(this, PP_FILESYSTEMTYPE_LOCALPERSISTENT),
+      buffer_(NULL),
+      array_(NULL),
+      device_scale_(1.0f),
       file_system_ready_(false),
       file_thread_(this) {}
 
@@ -79,9 +97,140 @@ class FileIoUrlLoaderInstance : public pp::Instance {
       return true;
     }
 
+    virtual void DidChangeView(const pp::View& view) {
+      /*
+      device_scale_ = view.GetDeviceScale();
+      pp::Size new_size = pp::Size(view.GetRect().width() * device_scale_,
+          view.GetRect().height() * device_scale_);
+
+      if (!CreateContext(new_size))
+        return;
+
+      // When flush_context_ is null, it means there is no Flush callback in
+      // flight. This may have happened if the context was not created
+      // successfully, or if this is the first call to DidChangeView (when the
+      // module first starts). In either case, start the main loop.
+      
+      if (flush_context_.is_null())
+        MainLoop(0);
+      */
+    }
+  
   private:
+
+    bool CreateContext(const pp::Size& new_size) {
+      const bool kIsAlwaysOpaque = true;
+      context_ = pp::Graphics2D(this, new_size, kIsAlwaysOpaque);
+      // Call SetScale before BindGraphics so the image is scaled correctly on
+      // HiDPI displays.
+      context_.SetScale(1.0f / device_scale_);
+      if (!BindGraphics(context_)) {
+        fprintf(stderr, "Unable to bind 2d context!\n");
+        context_ = pp::Graphics2D();
+        return false;
+      }
+
+      // Allocate a buffer of palette entries of the same size as the new context.
+      buffer_ = new uint8_t[new_size.width() * new_size.height() * 3]; // 3 for RGB
+      size_ = new_size;
+
+      return true;
+    }
+
+    uint32_t GetArrayValue (uint32_t *array, uint32_t offset, uint32_t size) {
+      uint32_t ret = 0;
+      for (int i = size - 1; i >= 0; i--) {
+        ret = ret << 8;
+        ret += array[offset + i];
+      }
+      return ret;
+    }
+
+    void UpdateWithArray (uint32_t *array) {
+      uint32_t start_offset = GetArrayValue (array, 10, 4);
+      uint32_t width = GetArrayValue (array, 18, 4);
+      uint32_t height = GetArrayValue (array, 22, 4);
+      
+      pp::Size new_size = pp::Size (width, height);
+      CreateContext (new_size);
+      
+      StringVector sv;
+      std::stringstream ss;
+      ss << width;
+      //ShowStatusMessage (ss.str());
+      sv.push_back(ss.str());
+      ss.str("");
+      ss << height;
+      //ShowStatusMessage (ss.str());
+      sv.push_back(ss.str());
+      PostArrayMessage("GRAPHICS", "WH", sv);
+      
+
+      for (int y = 0; y < height; y++) {
+        uint32_t offset = (height - 1 - y) * width * 3; // Bottom up
+        for (int x = 0; x < width; x++) {
+          buffer_[offset + x * 3 + 2] = GetArrayValue (array, start_offset + y * width * 3 + x * 3, 1);
+          buffer_[offset + x * 3 + 1] = GetArrayValue (array, start_offset + y * width * 3 + x * 3 + 1, 1);
+          buffer_[offset + x * 3] = GetArrayValue (array, start_offset + y * width * 3 + x * 3 + 2, 1);
+        }
+      }
+    }
+
+    void Paint() {
+      // See the comment above the call to ReplaceContents below.
+      PP_ImageDataFormat format = pp::ImageData::GetNativeImageDataFormat();
+      const bool kDontInitToZero = false;
+      pp::ImageData image_data(this, format, size_, kDontInitToZero);
+
+      uint32_t* data = static_cast<uint32_t*>(image_data.data());
+      if (!data)
+        return;
+
+      uint32_t num_pixels = size_.width() * size_.height();
+      size_t offset = 0;
+      for (uint32_t i = 0; i < num_pixels; ++i) {
+        data[offset] = MakeColor (buffer_[offset * 3], buffer_[offset * 3 + 1], buffer_[offset * 3 + 2]);
+        offset ++;
+      }
+
+      // Using Graphics2D::ReplaceContents is the fastest way to update the
+      // entire canvas every frame. According to the documentation:
+      //
+      //   Normally, calling PaintImageData() requires that the browser copy
+      //   the pixels out of the image and into the graphics context's backing
+      //   store. This function replaces the graphics context's backing store
+      //   with the given image, avoiding the copy.
+      //
+      //   In the case of an animation, you will want to allocate a new image for
+      //   the next frame. It is best if you wait until the flush callback has
+      //   executed before allocating this bitmap. This gives the browser the
+      //   option of caching the previous backing store and handing it back to
+      //   you (assuming the sizes match). In the optimal case, this means no
+      //   bitmaps are allocated during the animation, and the backing store and
+      //   "front buffer" (which the module is painting into) are just being
+      //   swapped back and forth.
+      //
+      
+      const pp::ImageData const_data = static_cast<const pp::ImageData>(image_data);
+      const pp::Point top_left_ (0, 0);
+      const pp::Rect src_rect_ (0, 0, size_.width(), size_.height());
+      context_.PaintImageData (const_data, top_left_, src_rect_); 
+
+      //context_.ReplaceContents(&image_data);
+
+    }
+
+    void Nop (int32_t) {}
+
     pp::CompletionCallbackFactory<FileIoUrlLoaderInstance> callback_factory_;
+    pp::CompletionCallbackFactory<FileIoUrlLoaderInstance> callback_factory_graphics_;
     pp::FileSystem file_system_;
+    pp::Graphics2D context_;
+    pp::Graphics2D flush_context_;
+    pp::Size size_;
+    uint8_t* buffer_;
+    uint32_t* array_;
+    float device_scale_;
 
     // Indicates whether file_system_ was opened successfully. We only read/write
     // this on the file_thread_.
@@ -90,11 +239,11 @@ class FileIoUrlLoaderInstance : public pp::Instance {
     // We do all our file operations on the file_thread_.
     pp::SimpleThread file_thread_;
 
-    void PostArrayMessage(const char* command, const StringVector& strings) {
+    void PostArrayMessage(const std::string& prefix, const char* command, const StringVector& strings) {
       pp::VarArray message;
       // FILEIO prefix attached to the first index of VarArray
       // to differentiate message for fileIO and for urlLoader.
-      message.Set(0, "FILEIO");
+      message.Set(0, prefix);
       message.Set(1, command);
       for (size_t i = 0; i < strings.size(); ++i) {
         message.Set(i + 2, strings[i]);
@@ -103,14 +252,14 @@ class FileIoUrlLoaderInstance : public pp::Instance {
       PostMessage(message);
     }
 
-    void PostArrayMessage(const char* command) {
-      PostArrayMessage(command, StringVector());
+    void PostArrayMessage(const std::string& prefix, const char* command) {
+      PostArrayMessage(prefix, command, StringVector());
     }
 
-    void PostArrayMessage(const char* command, const std::string& s) {
+    void PostArrayMessage(const std::string& prefix, const char* command, const std::string& s) {
       StringVector sv;
       sv.push_back(s);
-      PostArrayMessage(command, sv);
+      PostArrayMessage(prefix, command, sv);
     }
 
     /// Handler for messages coming in from the browser via postMessage().  The
@@ -189,6 +338,18 @@ class FileIoUrlLoaderInstance : public pp::Instance {
       }
       else {
         //TODO paint picture with received data!
+        uint32_t len = messageArray.GetLength();
+        array_ = new uint32_t[len];
+        for (uint32_t i = 0; i < len; i++) {
+          array_[i] = messageArray.Get(i).AsInt();
+        }
+        
+        UpdateWithArray (array_);
+        Paint();
+        context_.Flush(callback_factory_graphics_.NewCallback(&FileIoUrlLoaderInstance::Nop));
+
+        //if (flush_context_.is_null())
+        //MainLoop(0);
       }
     }
 
@@ -197,7 +358,7 @@ class FileIoUrlLoaderInstance : public pp::Instance {
       if (rv == PP_OK) {
         file_system_ready_ = true;
         // Notify the user interface that we're ready
-        PostArrayMessage("READY");
+        PostArrayMessage("FILEIO", "READY");
       } else {
         ShowErrorMessage("Failed to open file system", rv);
       }
@@ -303,7 +464,7 @@ class FileIoUrlLoaderInstance : public pp::Instance {
       }
       // Done reading, send content to the user interface
       std::string string_data(data.begin(), data.end());
-      PostArrayMessage("DISP", string_data);
+      PostArrayMessage("FILEIO", "DISP", string_data);
       ShowStatusMessage("Load success");
       ShowStatusMessage(string_data);
     }
@@ -355,7 +516,7 @@ class FileIoUrlLoaderInstance : public pp::Instance {
           sv.push_back(name.AsString());
         }
       }
-      PostArrayMessage("LIST", sv);
+      PostArrayMessage("FILEIO", "LIST", sv);
       ShowStatusMessage("List success");
     }
 
@@ -399,11 +560,11 @@ class FileIoUrlLoaderInstance : public pp::Instance {
     void ShowErrorMessage(const std::string& message, int32_t result) {
       std::stringstream ss;
       ss << message << " -- Error #: " << result;
-      PostArrayMessage("ERR", ss.str());
+      PostArrayMessage("FILEIO", "ERR", ss.str());
     }
 
     void ShowStatusMessage(const std::string& message) {
-      PostArrayMessage("STAT", message);
+      PostArrayMessage("FILEIO", "STAT", message);
     }
 };
 

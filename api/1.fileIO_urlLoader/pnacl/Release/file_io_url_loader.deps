@@ -49,7 +49,10 @@ pnacl/Release/file_io_url_loader.o: file_io_url_loader.cc \
   /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/cpp/url_loader.h \
   url_loader_handler.h \
   /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/cpp/url_request_info.h \
-  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb_url_request_info.h
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb_url_request_info.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb_image_data.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/cpp/graphics_2d.h \
+  /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/cpp/image_data.h
 file_io_url_loader.cc:
 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_stdint.h:
 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/pp_macros.h:
@@ -101,3 +104,6 @@ file_io_url_loader.cc:
 url_loader_handler.h:
 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/cpp/url_request_info.h:
 /Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb_url_request_info.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/c/ppb_image_data.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/cpp/graphics_2d.h:
+/Users/yeonwoo-kim/HealthHub/nacl_sdk/pepper_49/include/ppapi/cpp/image_data.h:

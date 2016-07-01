@@ -38,6 +38,7 @@ URLLoaderHandler::URLLoaderHandler(pp::Instance* instance,
     url_request_.SetURL(url);
     url_request_.SetMethod("GET");
     url_request_.SetRecordDownloadProgress(true);
+    url_request_.SetProperty(PP_URLREQUESTPROPERTY_ALLOWCROSSORIGINREQUESTS, pp::Var(true));
   }
 
 URLLoaderHandler::~URLLoaderHandler() {
