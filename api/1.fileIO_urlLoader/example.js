@@ -27,12 +27,14 @@ function attachListeners() {
   addEventListenerToButton('loadFile', loadFile);
   addEventListenerToButton('makeDir', makeDir);
   addEventListenerToButton('loadURL', loadUrl);
+  addEventListenerToButton('delete', deleteFileOrDirectory);
+  addEventListenerToButton('listDir', listDir);
 }
 
 function loadUrl() {
   if (common.naclModule) {
     var fileName = document.querySelector('#loadURL input').value;
-    common.naclModule.postMessage(['URLLOADER','getUrl:5.bmp', fileName]);
+    common.naclModule.postMessage(['URLLOADER','getUrl:6.bmp', fileName]);
   }
 }
 
@@ -58,21 +60,19 @@ function loadFile() {
   }
 }
 
-/*
-   function deleteFileOrDirectory() {
-   if (common.naclModule) {
-   var fileName = document.querySelector('#delete input').value;
-   common.naclModule.postMessage(makeMessage('delete', fileName));
-   }
-   }
+function deleteFileOrDirectory() {
+  if (common.naclModule) {
+    var fileName = document.querySelector('#delete input').value;
+    common.naclModule.postMessage(makeMessage('delete', fileName));
+  }
+}
 
-   function listDir() {
-   if (common.naclModule) {
-   var dirName = document.querySelector('#listDir input').value;
-   common.naclModule.postMessage(makeMessage('list', dirName));
-   }
-   }
-*/
+function listDir() {
+  if (common.naclModule) {
+    var dirName = document.querySelector('#listDir input').value;
+    common.naclModule.postMessage(makeMessage('list', dirName));
+  }
+}
 
 function makeDir() {
   if (common.naclModule) {

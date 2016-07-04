@@ -188,22 +188,22 @@ class FileIoUrlLoaderInstance : public pp::Instance {
           file_thread_.message_loop().PostWork(callback_factory_.NewCallback(
                 &FileIoUrlLoaderInstance::Save, t, ss.str()));
         } 
-        /*else if (command == "delete") {
+        else if (command == "delete") {
           file_thread_.message_loop().PostWork(
-          callback_factory_.NewCallback(&FileIoUrlLoaderInstance::Delete, file_name));
-          } else if (command == "list") {
+              callback_factory_.NewCallback(&FileIoUrlLoaderInstance::Delete, file_name));
+        } else if (command == "makedir") {
           const std::string& dir_name = file_name;
           file_thread_.message_loop().PostWork(
-          callback_factory_.NewCallback(&FileIoUrlLoaderInstance::List, dir_name));
-          }*/ else if (command == "makedir") {
+              callback_factory_.NewCallback(&FileIoUrlLoaderInstance::MakeDir, dir_name));
+        }  else if (command == "list") {
           const std::string& dir_name = file_name;
           file_thread_.message_loop().PostWork(
-          callback_factory_.NewCallback(&FileIoUrlLoaderInstance::MakeDir, dir_name));
-          }/* else if (command == "rename") {
-          const std::string new_name = messageArray.Get(3).AsString();
-          file_thread_.message_loop().PostWork(callback_factory_.NewCallback(
-          &FileIoUrlLoaderInstance::Rename, file_name, new_name));
-          }*/
+              callback_factory_.NewCallback(&FileIoUrlLoaderInstance::List, dir_name));
+        } /* else if (command == "rename") {
+             const std::string new_name = messageArray.Get(3).AsString();
+             file_thread_.message_loop().PostWork(callback_factory_.NewCallback(
+             &FileIoUrlLoaderInstance::Rename, file_name, new_name));
+             }*/
       }
       else {
         uint32_t len = messageArray.GetLength();
@@ -440,7 +440,6 @@ class FileIoUrlLoaderInstance : public pp::Instance {
             &FileIoUrlLoaderInstance::LoadCallback, ref));
     }
 
-    /*
     void Delete(int32_t, const std::string& file_name) {
       if (!file_system_ready_) {
         ShowErrorMessage("File system is not open", PP_ERROR_FAILED);
@@ -471,7 +470,6 @@ class FileIoUrlLoaderInstance : public pp::Instance {
       ref.ReadDirectoryEntries(callback_factory_.NewCallbackWithOutput(
             &FileIoUrlLoaderInstance::ListCallback, ref));
     }
-    */
 
     void LoadCallback(int32_t result, const std::vector<pp::DirectoryEntry>& entries, pp::FileRef) {
       if (result != PP_OK) {
@@ -540,7 +538,6 @@ class FileIoUrlLoaderInstance : public pp::Instance {
         context_.Flush(callback_factory_.NewCallback(&FileIoUrlLoaderInstance::Nop));
       }
     }
-    /*
 
     void ListCallback(int32_t result,
         const std::vector<pp::DirectoryEntry>& entries,
@@ -560,7 +557,6 @@ class FileIoUrlLoaderInstance : public pp::Instance {
       PostArrayMessage("FILEIO", "LIST", sv);
       ShowStatusMessage("List success");
     }
-    */
 
     void MakeDir(int32_t, const std::string& dir_name) {
       if (!file_system_ready_) {
