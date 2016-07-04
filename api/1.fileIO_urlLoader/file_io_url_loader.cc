@@ -320,8 +320,7 @@ class FileIoUrlLoaderInstance : public pp::Instance {
       
       const pp::ImageData const_data = static_cast<const pp::ImageData>(image_data);
       const pp::Point top_left_ (0, 0);
-      const pp::Rect src_rect_ (0, 0, size_.width(), size_.height());
-      context_.PaintImageData (const_data, top_left_, src_rect_); 
+      context_.PaintImageData (const_data, top_left_); 
 
       //context_.ReplaceContents(&image_data);
     }
