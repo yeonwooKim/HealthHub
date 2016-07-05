@@ -34,7 +34,7 @@ function attachListeners() {
 function loadUrl() {
   if (common.naclModule) {
     var fileName = document.querySelector('#loadURL input').value;
-    common.naclModule.postMessage(['URLLOADER','getUrl:6.bmp', fileName]);
+    common.naclModule.postMessage(['URLLOADER','getUrl:3.bmp', fileName]);
   }
 }
 
@@ -171,8 +171,8 @@ function handleMessage(message_event) {
     if (command == 'WH') {
       var width = args[0];
       var height = args[1];
-      common.naclModule.width = width;
-      common.naclModule.height = height;
+      common.naclModule.width = parseInt(width);
+      common.naclModule.height = parseInt(height);
     }
   }
 }

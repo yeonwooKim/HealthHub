@@ -216,10 +216,32 @@ class FileIoUrlLoaderInstance : public pp::Instance {
         for (uint32_t i = 0; i < len; i++) {
           array_[i] = messageArray.Get(i).AsInt();
         }
-        
-        UpdateWithArray (array_);
-        Paint();
+
+        pp::Size new_size = pp::Size (3000, 3000);
+        CreateContext (new_size);
+
+        std::stringstream ss;
+        StringVector sv;
+        ss << 3000;
+        sv.push_back(ss.str());
+        ss.str("");
+        ss << 3000;
+        sv.push_back(ss.str());
+        PostArrayMessage("GRAPHICS", "WH", sv);
+
+        PP_ImageDataFormat format = pp::ImageData::GetNativeImageDataFormat();
+        const bool kDontInitToZero = false;
+        image_data = pp::ImageData (this, format, new_size, kDontInitToZero);
+        data = static_cast<uint32_t*>(image_data.data());
+        if (!data) return;
+
+        UpdateWithArray (array_, 10, 10);
+        //context_.Flush(callback_factory_.NewCallback(&FileIoUrlLoaderInstance::Nop));
+        UpdateWithArray (array_, 320, 10);
+        //context_.Flush(callback_factory_.NewCallback(&FileIoUrlLoaderInstance::Nop));
+        UpdateWithArray (array_, 630, 10);
         context_.Flush(callback_factory_.NewCallback(&FileIoUrlLoaderInstance::Nop));
+
       }
     }
 
@@ -257,48 +279,31 @@ class FileIoUrlLoaderInstance : public pp::Instance {
       return ret;
     }
 
-    void UpdateWithArray (uint32_t *array) {
+    void UpdateWithArray (uint32_t *array, uint32_t width_offset, uint32_t height_offset) {
       uint32_t start_offset = GetArrayValue (array, 10, 4);
       uint32_t width = GetArrayValue (array, 18, 4);
       uint32_t height = GetArrayValue (array, 22, 4);
       
-      pp::Size new_size = pp::Size (width, height);
-      CreateContext (new_size);
-      
-      std::stringstream ss;
-      StringVector sv;
-      ss << width;
-      sv.push_back(ss.str());
-      ss.str("");
-      ss << height;
-      sv.push_back(ss.str());
-      PostArrayMessage("GRAPHICS", "WH", sv);
-      
       for (int y = 0; y < height; y++) {
-        uint32_t offset = (height - 1 - y) * width * 3; // Bottom up
+        uint32_t offset = (height_offset + height - 1 - y) * size_.width() * 3; // Bottom up
         for (int x = 0; x < width; x++) {
-          buffer_[offset + x * 3 + 2] = GetArrayValue (array, start_offset + y * width * 3 + x * 3, 1);
-          buffer_[offset + x * 3 + 1] = GetArrayValue (array, start_offset + y * width * 3 + x * 3 + 1, 1);
-          buffer_[offset + x * 3] = GetArrayValue (array, start_offset + y * width * 3 + x * 3 + 2, 1);
+          buffer_[offset + (width_offset + x) * 3 + 2] = GetArrayValue (array, start_offset + y * width * 3 + x * 3, 1);
+          buffer_[offset + (width_offset + x) * 3 + 1] = GetArrayValue (array, start_offset + y * width * 3 + x * 3 + 1, 1);
+          buffer_[offset + (width_offset + x) * 3] = GetArrayValue (array, start_offset + y * width * 3 + x * 3 + 2, 1);
         }
       }
+
+      Paint (width_offset, height_offset, width, height);
     }
 
-    void Paint() {
+    void Paint(uint32_t width_offset, uint32_t height_offset, uint32_t width, uint32_t height) {
       // See the comment above the call to ReplaceContents below.
-      PP_ImageDataFormat format = pp::ImageData::GetNativeImageDataFormat();
-      const bool kDontInitToZero = false;
-      pp::ImageData image_data(this, format, size_, kDontInitToZero);
-
-      uint32_t* data = static_cast<uint32_t*>(image_data.data());
-      if (!data)
-        return;
-
-      uint32_t num_pixels = size_.width() * size_.height();
-      size_t offset = 0;
-      for (uint32_t i = 0; i < num_pixels; ++i) {
-        data[offset] = MakeColor (buffer_[offset * 3], buffer_[offset * 3 + 1], buffer_[offset * 3 + 2]);
-        offset ++;
+      
+      for (uint32_t y = height_offset; y < height + height_offset; y++) {
+        for (uint32_t x = width_offset; x < width + width_offset; x++) {
+          uint32_t offset = y * size_.width() + x;
+          data[offset] = MakeColor (buffer_[offset * 3], buffer_[offset * 3 + 1], buffer_[offset * 3 + 2]);
+        }
       }
 
       // Using Graphics2D::ReplaceContents is the fastest way to update the
@@ -321,8 +326,10 @@ class FileIoUrlLoaderInstance : public pp::Instance {
       
       const pp::ImageData const_data = static_cast<const pp::ImageData>(image_data);
       const pp::Point top_left_ (0, 0);
-      context_.PaintImageData (const_data, top_left_); 
-
+      const pp::Rect src_rect_ (width_offset, height_offset, width, height);
+      //const pp::Point top_left_ (0, 0);
+      //const pp::Rect src_rect_ (0, 0, size_.width(), size_.height());
+      context_.PaintImageData (const_data, top_left_, src_rect_); 
       //context_.ReplaceContents(&image_data);
     }
 
@@ -332,6 +339,8 @@ class FileIoUrlLoaderInstance : public pp::Instance {
     pp::FileSystem file_system_;
     pp::Graphics2D context_;
     pp::Size size_;
+    pp::ImageData image_data;
+    uint32_t* data;
     uint8_t* buffer_;
     uint32_t* array_;
     float device_scale_;
@@ -477,6 +486,26 @@ class FileIoUrlLoaderInstance : public pp::Instance {
         return;
       }
 
+      pp::Size new_size = pp::Size (3000, 3000);
+      CreateContext (new_size);
+
+      std::stringstream ss;
+      StringVector sv;
+      ss << 3000;
+      sv.push_back(ss.str());
+      ss.str("");
+      ss << 3000;
+      sv.push_back(ss.str());
+      PostArrayMessage("GRAPHICS", "WH", sv);
+
+      PP_ImageDataFormat format = pp::ImageData::GetNativeImageDataFormat();
+      const bool kDontInitToZero = false;
+      image_data = pp::ImageData (this, format, new_size, kDontInitToZero);
+      data = static_cast<uint32_t*>(image_data.data());
+      if (!data) return;
+
+      uint32_t width_offset = 0;
+
       for (int i = 0 ; i < entries.size() ; i ++) {
         pp::FileIO file(this);
         pp::FileRef ref = entries[i].file_ref();
@@ -501,14 +530,14 @@ class FileIoUrlLoaderInstance : public pp::Instance {
           return;
         }
 
-        std::vector<char> data(info.size);
+        std::vector<char> filedata(info.size);
         int64_t offset = 0;
         int32_t bytes_read = 0;
         int32_t bytes_to_read = info.size;
         while (bytes_to_read > 0) {
           bytes_read = file.Read(offset,
-              &data[offset],
-              data.size() - offset,
+              &filedata[offset],
+              filedata.size() - offset,
               pp::BlockUntilComplete());
           if (bytes_read > 0) {
             offset += bytes_read;
@@ -519,24 +548,44 @@ class FileIoUrlLoaderInstance : public pp::Instance {
             return;
           }
         }
-        int len = data.size();
+        int len = filedata.size();
         if (array_) {
           delete[] array_;
           array_ = NULL;
         }
         array_ = new uint32_t[len];
         for (int i = 0 ; i < len ; i ++) {
-          int c = (unsigned char) data[i];
+          int c = (unsigned char) filedata[i];
           array_[i] = (uint32_t) c;
         }
         // Done reading, send content to the user interface
         ShowStatusMessage(ref.GetName().AsString());
         ShowStatusMessage("Load success");
-        UpdateWithArray (array_);
-        Paint();
-        file.Close();
-        context_.Flush(callback_factory_.NewCallback(&FileIoUrlLoaderInstance::Nop));
+       /* 
+        pp::Size new_size = pp::Size (3000, 3000);
+        CreateContext (new_size);
+
+        std::stringstream ss;
+        StringVector sv;
+        ss << 3000;
+        sv.push_back(ss.str());
+        ss.str("");
+        ss << 3000;
+        sv.push_back(ss.str());
+        PostArrayMessage("GRAPHICS", "WH", sv);
+
+        PP_ImageDataFormat format = pp::ImageData::GetNativeImageDataFormat();
+        const bool kDontInitToZero = false;
+        image_data = pp::ImageData (this, format, new_size, kDontInitToZero);
+        data = static_cast<uint32_t*>(image_data.data());
+        if (!data) return;
+       */
+        width_offset += 10;
+        UpdateWithArray (array_, width_offset, 10);
+        width_offset += GetArrayValue (array_, 18, 4);
+        file.Close();  
       }
+      context_.Flush(callback_factory_.NewCallback(&FileIoUrlLoaderInstance::Nop));
     }
 
     void ListCallback(int32_t result,
