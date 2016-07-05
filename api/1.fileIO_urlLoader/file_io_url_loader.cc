@@ -207,6 +207,7 @@ class FileIoUrlLoaderInstance : public pp::Instance {
       }
       else {
         uint32_t len = messageArray.GetLength();
+        ShowStatusMessage("RECEIVED");
         if (array_) {
           delete[] array_;
           array_ = NULL;
