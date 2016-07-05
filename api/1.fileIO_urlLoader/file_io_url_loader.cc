@@ -10,6 +10,8 @@
 #include <sstream>
 #include <string>
 #include <vector>
+#include <cmath>
+#include <algorithm>
 
 #include "ppapi/c/pp_stdint.h"
 #include "ppapi/c/ppb_file_io.h"
@@ -31,6 +33,7 @@
 #include "ppapi/c/ppb_image_data.h"
 #include "ppapi/cpp/graphics_2d.h"
 #include "ppapi/cpp/image_data.h"
+#include "ppapi/cpp/input_event.h"
 
 #ifndef INT32_MAX
 #define INT32_MAX (0x7FFFFFFF)
@@ -49,6 +52,7 @@ namespace {
   typedef std::vector<std::string> StringVector;
   const char* const kLoadUrlMethodId = "getUrl";
   static const char kMessageArgumentSeparator = ':';
+  static const int kMouseRadius = 1;
 
   uint32_t MakeColor(uint8_t r, uint8_t g, uint8_t b) {
     uint8_t a = 255;
@@ -78,6 +82,7 @@ class FileIoUrlLoaderInstance : public pp::Instance {
       buffer_(NULL),
       array_(NULL),
       device_scale_(1.0f),
+      mouse_first_down_(true),
       file_system_ready_(false),
       file_thread_(this) {}
 
@@ -90,6 +95,7 @@ class FileIoUrlLoaderInstance : public pp::Instance {
     virtual bool Init(uint32_t /*argc*/,
         const char * /*argn*/ [],
         const char * /*argv*/ []) {
+      RequestInputEvents(PP_INPUTEVENT_CLASS_MOUSE);
       file_thread_.Start();
       // Open the file system on the file_thread_. Since this is the first
       // operation we perform there, and because we do everything on the
@@ -117,6 +123,29 @@ class FileIoUrlLoaderInstance : public pp::Instance {
       if (flush_context_.is_null())
         MainLoop(0);
       */
+    }
+
+    virtual bool HandleInputEvent(const pp::InputEvent& event) {
+      if (!buffer_)
+        return true;
+      if (event.GetType() == PP_INPUTEVENT_TYPE_MOUSEDOWN) {
+        pp::MouseInputEvent mouse_event(event);
+
+        if (mouse_event.GetButton() == PP_INPUTEVENT_MOUSEBUTTON_NONE)
+          return true;
+
+        mouse_ = pp::Point(mouse_event.GetPosition().x() * device_scale_,
+            mouse_event.GetPosition().y() * device_scale_);
+        if (mouse_first_down_) {
+          mouse_first_pos_ = mouse_;
+          mouse_first_down_ = !mouse_first_down_;
+        } else {
+          mouse_second_pos_ = mouse_;
+          mouse_first_down_ = !mouse_first_down_;
+          DrawMouse();
+        }
+      }
+      return true;
     }
 
     /// Handler for messages coming in from the browser via postMessage().  The
@@ -247,8 +276,34 @@ class FileIoUrlLoaderInstance : public pp::Instance {
 
   
   private:
+    void DrawMouse() {
+      int x1 = mouse_first_pos_.x();
+      int y1 = mouse_first_pos_.y();
+      int x2 = mouse_second_pos_.x();
+      int y2 = mouse_second_pos_.y();
+      int minx = x1 > x2 ? x2 : x1;
+      int maxx = x1 > x2 ? x1 : x2;
+      int miny = y1 > y2 ? y2 : y1;
+      int maxy = y1 > y2 ? y1 : y2;
+      int a = y1 - y2;
+      int b = x2 - x1;
+      int c = x1 * y2 - x2 * y1;
+
+      for (int y = miny; y < maxy; y++) {
+        for (int x = minx; x < maxx; x++) {
+          if (pow (a * x + b * y + c, 2) <= (pow (a, 2) + pow (b, 2)) * pow (kMouseRadius, 2)) {
+            buffer_[y * size_.width() * 3 + x * 3] = 255;
+            buffer_[y * size_.width() * 3 + x * 3 + 1] = 255;
+            buffer_[y * size_.width() * 3 + x * 3 + 2] = 0;
+          }
+        }
+      }
+      Paint (minx, miny, maxx - minx, maxy - miny);
+      context_.Flush(callback_factory_.NewCallback(&FileIoUrlLoaderInstance::Nop));
+    }
+
     bool CreateContext(const pp::Size& new_size) {
-      const bool kIsAlwaysOpaque = true;
+      const bool kIsAlwaysOpaque = false;
       context_ = pp::Graphics2D(this, new_size, kIsAlwaysOpaque);
       // Call SetScale before BindGraphics so the image is scaled correctly on
       // HiDPI displays.
@@ -265,6 +320,7 @@ class FileIoUrlLoaderInstance : public pp::Instance {
         buffer_ = NULL;
       }
       buffer_ = new uint8_t[new_size.width() * new_size.height() * 3]; // 3 for RGB
+      std::fill_n (buffer_, new_size.width() * new_size.height() * 3, 255);
       size_ = new_size;
 
       return true;
@@ -344,6 +400,10 @@ class FileIoUrlLoaderInstance : public pp::Instance {
     uint8_t* buffer_;
     uint32_t* array_;
     float device_scale_;
+    bool mouse_first_down_;
+    pp::Point mouse_;
+    pp::Point mouse_first_pos_;
+    pp::Point mouse_second_pos_;
 
     // Indicates whether file_system_ was opened successfully. We only read/write
     // this on the file_thread_.
