@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <!--
+  Copyright (c) 2012 The Chromium Authors. All rights reserved.
+  Use of this source code is governed by a BSD-style license that can be
+  found in the LICENSE file.
+  -->
+<head>
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="-1">
+  <title>Sample Image Viewer</title>
+  <script type="text/javascript" src="common.js"></script>
+  <script type="text/javascript" src="example.js"></script>
+</head>
+<body data-width="200" data-height="200" data-custom-load="true" data-name="file_io_url_loader" data-tools="pnacl glibc clang-newlib mac" data-configs="Debug Release" data-path="{tc}/{config}">
+  <h1>Sample Image Viewer</h1>
+  <h2>Status: <code id="statusField">NO-STATUS</code></h2>
+  <ul>
+    <li>Press <strong>Get from URL and Save</strong> to get images from URL and store them in nacl's file system</li>
+    <li>Load a directory from nacl's file system to show images in it</li>
+    <li>Press <strong>Choose files</strong> to show images in local storage</li>
+  </ul>
+
+  <div class="function" id="loadFile">
+    <div>
+      <span>
+        Directory:
+        <input type="text" value="/directory">
+        <button>Load</button>
+      </span>
+    </div>
+  </div>
+  <div class="function" id="makeDir">
+    <span>
+      Directory:
+      <input type="text" value="/directory">
+      <button>Make Directory</button>
+    </span>
+  </div>
+  <div class="function" id="delete">
+    <span>
+      Filename/Directory:
+      <input type="text" value="/filename.txt">
+      <button>Delete</button>
+    </span>
+  </div>
+  <div class="function" id="listDir">
+    <div>
+      <span>
+        Directory:
+        <input type="text" value="/">
+        <button>List Directory</button>
+      </span>
+    </div>
+    Result:
+    <ul id="listDirOutput">
+    </ul>
+  </div>
+
+  <!--- Get files from local -->
+  <div>
+  <input type="file" id="files" name="files[]" multiple />
+  <output id="filelist"></output>
+  <script type="text/javascript" src="uploadFile.js"></script>
+  </div>
+
+  <!--- Get image from url -->
+  <div class="function" id="loadURL">
+    <div>
+      <span>
+        Filename:
+        <input type="text" value="/filename.txt">
+        <button>Get from URL and Save</button>
+      </span>
+    </div>
+  </div>
+
+  <pre id="log" style="font-weight: bold"></pre>
+  <!-- The NaCl plugin will be embedded inside the element with id "listener".
+  See common.js.-->
+  <div id="listener"></div>
+</body>
+</html>

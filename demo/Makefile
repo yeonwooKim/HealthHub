@@ -16,7 +16,6 @@ endif
 
 PROJECTS := \
   nacl_io_demo \
-  webPACS \
 
 
 HTTPD_PY := python ../../tools/httpd.py
